@@ -1,0 +1,32 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": false,
+        "File": ""
+    },
+    "Session": {
+        "Bookmarks": [
+        ],
+        "CurrentFile": "sections/introduzione.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 1,
+                "EditorGroup": 0,
+                "FileName": "main.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 120
+            },
+            {
+                "Col": 13,
+                "EditorGroup": 0,
+                "FileName": "sections/introduzione.tex",
+                "FirstLine": 55,
+                "FoldedLines": "",
+                "Line": 83
+            }
+        ],
+        "MasterFile": "",
+        "VerticalSplit": false
+    }
+}

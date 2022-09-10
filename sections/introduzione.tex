@@ -1,0 +1,93 @@
+
+
+\chapter{Introduzione}
+\label{introduzione}
+
+\section{OS Fingerprinting}
+\label{citazioni}
+
+L'OS fingerprinting consiste nel rilevare da remoto il sistema operativo di un dispositivo analizzandone i pacchetti inviati. Le differenze di implementazione dello stack TCP/IP, infatti, determinano comportamenti diversi che, analizzati, consentono di ottenere informazioni importanti. \\
+Il fingerprinting può essere effettuato in due modalità: attiva e passiva. \\ 
+Nella prima si analizzano le risposte ricevute in seguito ad alcuni pacchetti inviati; questi ultimi sono appositamente costruiti in modo da massimizzare le informazioni che si possono ottenere dalla risposta.
+Nella seconda, invece, viene ispezionato il normale traffico del dispositivo target; si tratta quindi di una tecnica meno invasiva e che si espone meno al rischio di essere scoperti.
+
+\section{Stack TCP/IP}
+Per effettuare comunicazioni tramite internet, vi è il bisogno che tutti i dispositivi connessi rispettino determinati meccanismi; questo si rende necessario a causa dell'elevata eterogeneità derivata da hardware e software differenti.
+Questi meccanismi, che prendono il nome di \textit{protocolli}, sono strutturati secondo diversi layer (livelli) formando lo stack TCP/IP.  \\
+Sebbene l'idea originale prevedesse un modello composto da sette livelli, de facto lo schema attualmente in uso ne prevede solamente quattro. Nonostante ciò, nella terminologia informatica la numerazione è rimasta quella precedente
+
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{| l | c |}
+		\hline
+		Livello 7 & Applicativo
+		\\
+		\hline
+		Livello 4 & Trasporto
+		\\
+		\hline
+		Livello 3 & Rete
+		\\
+		\hline
+		Livello 2 & Fisico
+		\\
+		\hline
+
+	\end{tabular}
+	\caption{Livelli dello stack TCP/IP}
+	\label{tab:stack}
+\end{table}
+
+\subsection{Funzionamento dello stack TCP/IP}
+Si consideri l'esempio dell'invio di una lettera tramite il servizio di poste. La procedura da seguire è la seguente:
+
+\begin{enumerate}
+	\item Il mittente scrive il contenuto del messaggio su un foglio e successivamente lo inserisce nella busta.
+	\item Il mittente scrive, nella busta, il nominativo del destinatario.
+	\item Il mittente scrive il CAP e l'indirizzo del ricevente.
+	\item Il mittente, dopo aver incollato il francobollo, consegna la busta al servizio di poste.
+\end{enumerate}
+
+Si noti che la sequenza di eventi che si verifica per la ricezione delle lettere è nell'ordine opposto a quello precedente:
+\begin{enumerate}
+	\item Viene controllata la presenza del francobollo.
+	\item Il postino legge l'indirizzo del destinatario e consegna la lettera.
+	\item Verrà letto il nominativo per individuare a quale inquilino è diretta.
+	\item Il destinatario apre la busta e legge il contenuto del messaggio.
+\end{enumerate}
+
+La sequenza di eventi descritta rappresenta ciò che avviene anche quando si comunica tramite internet. Ad ogni livello dello stack, infatti, vi è un protocollo che aggiunge una sua intestazione (\textit{header}) al pacchetto del mittente, ad iniziare dal livello più alto disponibile per quel dispositivo e il ricevente  valuterà queste in ordine inverso. Ad ogni layer il protocollo utilizzato può essere differente; fondamentale, ovviamente, che questo sia supportato da entrambi gli attori della conversazione.\\
+Questa metodologia prende il nome di \textit{incapsulamento}.
+\\
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/incapsulamento.png}
+	\caption{METTERE RIFERIMENTO IMMAGINE: http://infodoc.altervista.org/sistemi-e-reti/incapsulamento/}
+	\label{incapsulamento}
+\end{figure}
+
+
+
+Per valutare il sistema operativo di un determinato dispositivo, si fa affidamento agli header di ogni livello.
+
+
+
+
+
+
+\section{Strumenti per il fingerprinting}
+Esistono numerosi tool per effettuare il fingerprinting, che eseguono anche attività correlate e fondamentali per quest'ultimo come ad esempio il port scanning.
+Nel corso di questo documento si farà principalmente riferimento a due strumenti:
+\begin{itemize}
+	\item Nmap, per il fingerprinting attivo
+	\item p0f, per il fingerprinting passivo
+\end{itemize}
+
+
+	
+
+
+
+
+
+

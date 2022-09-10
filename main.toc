@@ -1,0 +1,7 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduzione}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}OS Fingerprinting}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Stack TCP/IP}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Funzionamento dello stack TCP/IP}{2}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Strumenti per il fingerprinting}{3}{section.1.3}%
