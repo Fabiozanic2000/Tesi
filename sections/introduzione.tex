@@ -48,7 +48,7 @@ Si consideri l'esempio dell'invio di una lettera tramite il servizio di poste. L
 	\item Il mittente, dopo aver incollato il francobollo, consegna la busta al servizio di poste.
 \end{enumerate}
 
-Si noti che la sequenza di eventi che si verifica per la ricezione delle lettere è nell'ordine opposto a quello precedente:
+Si noti che la sequenza di eventi che si verifica per la ricezione della lettera riflette le operazioni effettuate per l'invio, ma in ordine inverso:
 \begin{enumerate}
 	\item Viene controllata la presenza del francobollo.
 	\item Il postino legge l'indirizzo del destinatario e consegna la lettera.
@@ -56,28 +56,36 @@ Si noti che la sequenza di eventi che si verifica per la ricezione delle lettere
 	\item Il destinatario apre la busta e legge il contenuto del messaggio.
 \end{enumerate}
 
-La sequenza di eventi descritta rappresenta ciò che avviene anche quando si comunica tramite internet. Ad ogni livello dello stack, infatti, vi è un protocollo che aggiunge una sua intestazione (\textit{header}) al pacchetto del mittente, ad iniziare dal livello più alto disponibile per quel dispositivo e il ricevente  valuterà queste in ordine inverso. Ad ogni layer il protocollo utilizzato può essere differente; fondamentale, ovviamente, che questo sia supportato da entrambi gli attori della conversazione.\\
-Questa metodologia prende il nome di \textit{incapsulamento}.
+La sequenza di eventi descritta rappresenta ciò che avviene quando si comunica tramite internet. Ad ogni livello dello stack, infatti, vi è un protocollo che aggiunge una sua intestazione (\textit{header}) al pacchetto del mittente, ad iniziare dal livello più alto disponibile per quel dispositivo e il ricevente le valuterà in ordine inverso. Ad ogni layer il protocollo utilizzato può essere differente; fondamentale, ovviamente, che questo sia supportato da entrambi gli attori della conversazione.\\
+La procedura dell'inserimento degli header prende il nome di \textit{incapsulamento}.
 \\
 
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[width=\textwidth]{figures/incapsulamento.png}
 	\caption{METTERE RIFERIMENTO IMMAGINE: http://infodoc.altervista.org/sistemi-e-reti/incapsulamento/}
 	\label{incapsulamento}
 \end{figure}
 
+\subsection{Header per il fingerprinting}
+Gli header aggiunti ad ogni livello sono formati da vari campi contententi informazioni utili per la comunicazione, e il valore che questi assumono in determinate situazioni è dipendente dal sistema operativo che si sta utilizzando.
 
+Si prenda ad esempio l'header del protocollo TCP:\\
 
-Per valutare il sistema operativo di un determinato dispositivo, si fa affidamento agli header di ogni livello.
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{figures/headerTCP.JPG}
+	\caption{METTERE RIFERIMENTO IMMAGINE: https://www.ionos.it/digitalguide/server/know-how/presentazione-tcp/}
+	\label{headerTCP}
+\end{figure}
 
-
+Il campo \textit{option} permette di segnalare al ricevente l'uso di alcune opzioni di comunicazione, come il window scaling; il loro supporto e l'effettivo utilizzo, essendo queste facoltative e quindi peculiari di specifici sistemi operativi, rivestono quindi particolare importanza ai fini del fingerprinting.
+Esempi analoghi si possono trovare nei protocolli di tutti i livelli dello stack, e l'unione delle informazioni acquisite consente di poter individuare con una discreta precisione il sistema operativo del dispositivo target.
 
 
 
 
 \section{Strumenti per il fingerprinting}
 Esistono numerosi tool per effettuare il fingerprinting, che eseguono anche attività correlate e fondamentali per quest'ultimo come ad esempio il port scanning.
-Nel corso di questo documento si farà principalmente riferimento a due strumenti:
+Nel corso di questo documento si farà riferimento a due strumenti:
 \begin{itemize}
 	\item Nmap, per il fingerprinting attivo
 	\item p0f, per il fingerprinting passivo

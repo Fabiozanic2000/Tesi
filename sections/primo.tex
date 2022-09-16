@@ -1,0 +1,23 @@
+\chapter{Esperienza tirocinio sul fingerprinting}
+
+\section{Obiettivo}
+L'obiettivo dell'esperienza consisteva nell'analizzare le differenze che portavano all'individuazione del sistema operativo, e successivamente utilizzare le conoscenze acquisite per modificare dei parametri del sistema operativo in modo da riuscire ad ingannare i principali strumenti per il fingereprinting.
+I risultati ottenuti da quest'ultimi, quindi, dovevano essere errati e portare all'individuazione di un sistema operativo differente rispetto a quello realmente in uso.\\
+La procedura è stata effettuata su server HTTP, ovvero con pacchetti di dati non cifrati; si è successivamente cercato di effettuare un fingerprinting sull'handshake TLS, ovvero sullo scambio di messaggi che precede una comunicazione cifrata.
+
+\section{Strumenti e sistemi operativi utilizzati}
+Per la realizzazione dell'obiettivo sono stati utilizzati due differenti sistemi operativi: Windows 11 e Kali (una distribuzione Linux basata su Debian).
+La motivazione risiede nel fatto che Windows sia il sistema più diffuso al mondo e quindi un risultato che individui quello come sistema operativo risulti plausibile agli occhi di chi vuole effettuare il fingerptinging.
+
+I tool utilizzati, oltre ai già citati Nmap e p0f, sono stati i seguenti:
+\begin{itemize}
+	\item \textbf{Wireshark}, per l'analisi dei pacchetti
+	\item \textbf{Server Apache} installati su entrambi i sistemi operativi per simulare le risposte
+	\item \textbf{Scapy}, una libreria Python in grado di inviare specifici pacchetti modificabili in ogni campo, e di mostrare i quelli ricevuti
+	\item \textbf{nftables}, per la parte successiva all'analisi
+\end{itemize}
+
+
+
+
+

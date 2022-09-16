@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.9)  10 SEP 2022 03:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.9)  16 SEP 2022 03:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -171,6 +171,18 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@dimlist=\toks24
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+) (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen157
@@ -181,26 +193,49 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \backup@length=\skip53
 \ar@cellbox=\box54
 )
+\everycr=\toks26
+\minrowclearance=\skip54
+\rownum=\count281
+)
+(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex-dev/graphics\mathcolor.
+ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count282
+\float@exts=\toks27
+\float@box=\box55
+\@float@everytoks=\toks28
+\@floatcapt=\box56
+)
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
-\subfigtopskip=\skip54
-\subfigcapskip=\skip55
+\subfigtopskip=\skip55
+\subfigcapskip=\skip56
 \subfigcaptopadj=\dimen159
-\subfigbottomskip=\skip56
+\subfigbottomskip=\skip57
 \subfigcapmargin=\dimen160
-\subfiglabelskip=\skip57
-\c@subfigure=\count281
-\c@lofdepth=\count282
-\c@subtable=\count283
-\c@lotdepth=\count284
+\subfiglabelskip=\skip58
+\c@subfigure=\count283
+\c@lofdepth=\count284
+\c@subtable=\count285
+\c@lotdepth=\count286
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.cfg
 )
-\subfig@top=\skip58
-\subfig@bottom=\skip59
+\subfig@top=\skip59
+\subfig@bottom=\skip60
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -216,36 +251,35 @@ fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-))
+)
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
-) (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+)
+(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks26
-\verbatim@line=\toks27
+\every@verbatim=\toks29
+\verbatim@line=\toks30
 \verbatim@in@stream=\read3
-) (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count285
-\lst@gtempboxa=\box55
-\lst@token=\toks28
-\lst@length=\count286
+)
+(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count287
+\lst@gtempboxa=\box57
+\lst@token=\toks31
+\lst@length=\count288
 \lst@currlwidth=\dimen163
-\lst@column=\count287
-\lst@pos=\count288
+\lst@column=\count289
+\lst@pos=\count290
 \lst@lostspace=\dimen164
 \lst@width=\dimen165
-\lst@newlines=\count289
-\lst@lineno=\count290
+\lst@newlines=\count291
+\lst@lineno=\count292
 \lst@maxwidth=\dimen166
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count291
-\lst@skipnumbers=\count292
-\lst@framebox=\box56
+\c@lstnumber=\count293
+\lst@skipnumbers=\count294
+\lst@framebox=\box58
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
@@ -308,11 +342,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count293
+\c@section@level=\count295
 )
 \@linkdim=\dimen167
-\Hy@linkcounter=\count294
-\Hy@pagecounter=\count295
+\Hy@linkcounter=\count296
+\Hy@pagecounter=\count297
  (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -323,7 +357,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count296
+\Hy@SavedSpaceFactor=\count298
  (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -336,7 +370,7 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4408.
-\c@Hy@tempcnt=\count297
+\c@Hy@tempcnt=\count299
 LaTeX Info: Redefining \url on input line 4746.
 \XeTeXLinkMargin=\dimen168
 
@@ -348,7 +382,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count298
+\Fld@menulength=\count300
 \Field@Width=\dimen169
 \Fld@charsize=\dimen170
 Package hyperref Info: Hyper figures OFF on input line 6024.
@@ -363,9 +397,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6054.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count299
-\c@Item=\count300
-\c@Hfootnote=\count301
+\Hy@abspage=\count301
+\c@Item=\count302
+\c@Hfootnote=\count303
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -376,8 +410,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count302
-\c@bookmark@seq@number=\count303
+\Fld@listcount=\count304
+\c@bookmark@seq@number=\count305
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -390,20 +424,8 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip60
+\Hy@SectionHShift=\skip61
 )
-(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
-
-(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
-
-(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex-dev/graphics\mathcolor.
-ltx))
-Package color Info: Redefining color cyan on input line 27.
-
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -416,53 +438,53 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2022/05/18 v4.0.3 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip61
-\f@nch@O@elh=\skip62
-\f@nch@O@erh=\skip63
-\f@nch@O@olh=\skip64
-\f@nch@O@orh=\skip65
-\f@nch@O@elf=\skip66
-\f@nch@O@erf=\skip67
-\f@nch@O@olf=\skip68
-\f@nch@O@orf=\skip69
+\f@nch@headwidth=\skip62
+\f@nch@O@elh=\skip63
+\f@nch@O@erh=\skip64
+\f@nch@O@olh=\skip65
+\f@nch@O@orh=\skip66
+\f@nch@O@elf=\skip67
+\f@nch@O@erf=\skip68
+\f@nch@O@olf=\skip69
+\f@nch@O@orf=\skip70
 )
-
-Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 112.
-
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 114.
 
 
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 116.
+
+
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2022-08-30 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count304
-\l__pdf_internal_box=\box57
+\l__color_backend_stack_int=\count306
+\l__pdf_internal_box=\box59
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Info: Redefining \it@ocap on input line 142.
-LaTeX Info: Redefining \it@ccap on input line 142.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Info: Redefining \it@ocap on input line 144.
+LaTeX Info: Redefining \it@ccap on input line 144.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -502,17 +524,17 @@ LaTeX Info: Redefining \it@ccap on input line 142.
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count305
+\scratchcounter=\count307
 \scratchdimen=\dimen171
-\scratchbox=\box58
-\nofMPsegments=\count306
-\nofMParguments=\count307
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count308
+\scratchbox=\box60
+\nofMPsegments=\count308
+\nofMParguments=\count309
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count310
 \MPscratchDim=\dimen172
-\MPnumerator=\count309
-\makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks30
+\MPnumerator=\count311
+\makeMPintoPDFobject=\count312
+\everyMPtoPDFconversion=\toks33
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -524,19 +546,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count311
-Package hyperref Info: Link coloring OFF on input line 142.
+\c@lstlisting=\count313
+Package hyperref Info: Link coloring OFF on input line 144.
  (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--178
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--178
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
 
  []
 
@@ -546,11 +568,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--178
 {C:/Users/sanic/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 195.
+less on input line 197.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 195.
+less on input line 197.
 
 (main.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
@@ -573,11 +595,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 206.
+less on input line 208.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 206.
+less on input line 208.
 
 (sections/introduzione.tex
 Capitolo 1.
@@ -596,7 +618,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--62
  []
 
 [2]
-<figures/incapsulamento.png, id=62, 601.4972pt x 295.85532pt>
+<figures/incapsulamento.png, id=102, 601.4972pt x 295.85532pt>
 File: figures/incapsulamento.png Graphic file (type png)
 <use figures/incapsulamento.png>
 Package pdftex.def Info: figures/incapsulamento.png  used on input line 64.
@@ -606,41 +628,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--65
 []\T1/cmr/m/n/12 Figura 1.1: []METTERE RI-FE-RI-MEN-TO IM-MA-GI-NE:
  []
 
-[3 <./figures/incapsulamento.png>]) (main.bbl [4]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-1.
 
-(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-))
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
+ []
+
+<figures/headerTCP.JPG, id=104, 1161.33875pt x 391.4625pt>
+File: figures/headerTCP.JPG Graphic file (type jpg)
+<use figures/headerTCP.JPG>
+Package pdftex.def Info: figures/headerTCP.JPG  used on input line 75.
+(pdftex.def)             Requested size: 441.01773pt x 148.65575pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+[]\T1/cmr/m/n/12 Figura 1.2: []METTERE RI-FE-RI-MEN-TO IM-MA-GI-NE:
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./figures/incapsulamento.png>]) (sections/primo.tex [4 <./figures/headerTCP
+.JPG>]
+Capitolo 2.
 [5
 
-] (main.aux)
+]) (sections/secondo.tex [6]
+Capitolo 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
+
+ []
+
+[7
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
+
+ []
+
+[8]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 76.
+
+<figures/congestione.png, id=137, 493.0922pt x 81.30376pt>
+File: figures/congestione.png Graphic file (type png)
+<use figures/congestione.png>
+Package pdftex.def Info: figures/congestione.png  used on input line 77.
+(pdftex.def)             Requested size: 441.01773pt x 72.72112pt.
+[9 <./figures/congestione.png>]) [10] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F67336A4CF410EC4D1F2E83F7883FEE8;810.
+(rerunfilecheck)             Checksum: 7451D359733257091E838DDF6E1F0224;2474.
  ) 
 Here is how much of TeX's memory you used:
- 13488 strings out of 475389
- 211478 string characters out of 2777001
- 749335 words of memory out of 3000000
- 34620 multiletter control sequences out of 15000+600000
- 482862 words of font info for 59 fonts, out of 8000000 for 9000
+ 14050 strings out of 475389
+ 218414 string characters out of 2777001
+ 762474 words of memory out of 3000000
+ 35153 multiletter control sequences out of 15000+600000
+ 482549 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,77p,582b,533s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
+ 72i,12n,77p,571b,519s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm1000.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecti1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\sanic\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\sanic\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\sanic\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk>
-Output written on main.pdf (7 pages, 118593 bytes).
+0\ecrm1000.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecti1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecbx1728.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\sanic\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\sanic\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk>
+Output written on main.pdf (12 pages, 200507 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 120 words of extra memory for PDF output out of 10000 (max. 10000000)
 
