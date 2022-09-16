@@ -1,114 +1,73 @@
-\chapter{Attività di analisi}
-L'attività di analisi iniziale, ovvero senza l'ausilio di librerie specifiche per l'invio di determinati pacchetti, è stata effettuata installando un Server Apache sia su Windows 11 che su sistema operativo Kali.
-Si è quindi proceduto ad inviare richieste ai server tramite browser web e all'analisi dei pacchetti ricevuti in risposta con l'utilizzo di Wireshark.
-Successivamente sono state analizzate anche le risposte a determinati pacchetti inviati con Scapy.
-Di seguito sono riportate le differenze più importanti rilevate durante l'intera attività di analisi.
+\chapter{Teoria}
 
-\section{Livello 3: protocolli IP e ICMP}
-È stata effettuata in primis l'analisi del TTL, essendo un valore estremamente semplice da analizzare.
-Questo campo contiene un numero intero che viene decrementato ad ogni \textit{hop}, cioè ad ogni router che incontra nel percorso verso l'host ricevente, e viene eliminato dalla rete quando questo raggiunge lo 0.
-Il protocollo, però, non impone nessun valore di partenza, lasciandolo decidere al sistema operativo del mittente; l'unico limite è rappresentato dagli 8 bit riservati a quel campo (ovvero ad un valore massimo di 255).
-L'analisi ha portato ad evidenziare la seguente differenza riguardo al TTL:
-\begin{table}[H]
-	\centering
-	\begin{tabular}{ l | c }
-		\hline
-		\rowcolor{blue!10} Windows 11 & 128
-		\\
-		\hline
-		\rowcolor{red!10} Kali & 7
-		\\
-		\hline
-		
-	\end{tabular}
-	\caption{TTL iniziale}
-	\label{tab:TTL}
-\end{table}
+\section{Stack TCP/IP}
+Per effettuare comunicazioni tramite internet, vi è il bisogno che tutti i dispositivi connessi rispettino determinati meccanismi; questo si rende necessario a causa dell'elevata eterogeneità derivata da hardware e software differenti.
+Questi meccanismi, che prendono il nome di \textit{protocolli}, sono strutturati secondo diversi layer (livelli) formando lo stack TCP/IP.  \\
+Sebbene l'idea originale prevedesse un modello composto da sette livelli, de facto lo schema attualmente in uso ne prevede solamente quattro. Nonostante ciò, nella terminologia informatica la numerazione è rimasta quella precedente.
 
-È inoltre stata effettuata l'analisi del protocollo ICMP, e in particolare è stata notata una differenza nel campo \textit{code} in caso di risposta a determinati pacchetti inviati utilizzando la libreria di Python scapy.
-\\
-
-METTERE SCREEN DEL MINISCRIPT IN PYTHON.
-
-Questo comando invia un pacchetto ICMP con il campo \textit{code} impostato ad un numero diverso da zero: in questo specifico contesto, Windows 11 risponde inviando un pacchetto in cui \textit{code}=0, mentre Kali copia il valore che ha ricevuto nella richiesta.
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{  l | c }
-		\hline
-		\rowcolor{blue!10} Windows 11 & 0
-		\\
-		\hline
-		\rowcolor{red!10} Kali & Stesso valore inviato nella richiesta
-		\\
-		\hline
-
-	\end{tabular}
-	\caption{Campo code quando nella richiesta è diverso da 0}
-	\label{tab:code}
-\end{table}
-
-\section{Livello 4: analisi protocollo TCP}
-Il livello 4 dello stack è formato da due protocolli: Transmission Control Protocol (TCP) e User Datagram Protocol (UDP). Entrambi forniscono informazioni utili per il fingerprinting, ma il TCP possiede un numero maggiore di campi e di opzioni utilizzabili, pertanto è stata data priorità all'analisi di quest'ultimo.
-
-Analizzando l'handshake TCP, si può notare una discrepanza nell'utilizzo del Window Scale; quest'opzione consente di aumentare la Window Size oltre il valore che si otterrebbe settando tutti i bit di quel campo a 1.
-L'utilizzo di questa opzione viene concordato nei segmenti SYN e SYN+ACK dell'handshake e il suo valore non viene più modificato per il resto della connessione. Confrontando i valori ottenuti da Windows 11 e Kali, si ottiene il seguente risultato:
-\\
 \begin{table}[htb]
 	\centering
-	\begin{tabular}{ l | c }
+	\begin{tabular}{| l | c |}
 		\hline
-		\rowcolor{blue!10} Windows 11 & 8
+		Livello 7 & Applicativo
 		\\
 		\hline
-		\rowcolor{red!10} Kali & 7
+		Livello 4 & Trasporto
+		\\
+		\hline
+		Livello 3 & Rete
+		\\
+		\hline
+		Livello 2 & Fisico
 		\\
 		\hline
 		
 	\end{tabular}
-	\caption{Window Scaling Factor}
-	\label{tab:Window Scale}
+	\caption{Livelli dello stack TCP/IP}
+	\label{tab:stack}
 \end{table}
 
-Continuando l'analisi si possono notare ulteriori differenze riguardanti il flag sulla notifica esplicita di congestione (ECN).
-Se infatti si invia un pacchetto simulando l'inizio di un handshake (SYN) con i flag sulla congestione attivi, si otterranno risultati differenti tra Windows 11 e Kali nel pacchetto di risposta (che sarà ovviamente un SYN+ACK, secondo passo dell'handshake):\\
+\subsection{Funzionamento dello stack TCP/IP}
+%Si consideri l'esempio dell'invio di una lettera tramite il servizio di poste. La procedura da seguire è la seguente:
+%
+%\begin{enumerate}
+%	\item Il mittente scrive il contenuto del messaggio su un foglio e successivamente lo inserisce nella busta.
+%	\item Il mittente scrive, nella busta, il nominativo del destinatario.
+%	\item Il mittente scrive il CAP e l'indirizzo del ricevente.
+%	\item Il mittente, dopo aver incollato il francobollo, consegna la busta al servizio di poste.
+%\end{enumerate}
+%
+%Si noti che la sequenza di eventi che si verifica per la ricezione della lettera riflette le operazioni effettuate per l'invio, ma in ordine inverso:
+%\begin{enumerate}
+%	\item Viene controllata la presenza del francobollo.
+%	\item Il postino legge l'indirizzo del destinatario e consegna la lettera.
+%	\item Verrà letto il nominativo per individuare a quale inquilino è diretta.
+%	\item Il destinatario apre la busta e legge il contenuto del messaggio.
+%\end{enumerate}
+%
+%La sequenza di eventi descritta rappresenta ciò che avviene quando si comunica tramite internet. Ad ogni livello dello stack, infatti, vi è un protocollo che aggiunge una sua intestazione (\textit{header}) al pacchetto del mittente, ad iniziare dal livello più alto disponibile per quel dispositivo e il ricevente le valuterà in ordine inverso. Ad ogni layer il protocollo utilizzato può essere differente; fondamentale, ovviamente, che questo sia supportato da entrambi gli attori della conversazione.\\
+%La procedura dell'inserimento degli header prende il nome di \textit{incapsulamento}.
+%\\
+Il meccanismo dello stack prevede che ad ogni livello vengano aggiunti al messaggio delle intestazioni (header), che verranno valutate dal ricevente nell'ordine inverso rispetto a quello del mittente.
+Questa procedura prende il nome di \textit{incapsulamento} ed è riassunta nella seguente figura:
 
-\begin{figure}[]
-	\includegraphics[width=\textwidth]{figures/congestione.png}
-	\caption{Comando python per l'invio del pacchetto specifico}
-	\label{congestione}
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{figures/incapsulamento.png}
+	\caption{METTERE RIFERIMENTO IMMAGINE: http://infodoc.altervista.org/sistemi-e-reti/incapsulamento/}
+	\label{incapsulamento}
 \end{figure}
 
-\begin{table}[h]
-	\centering
-	\begin{tabular}{ l | c }
-		\hline
-		\rowcolor{blue!10} Windows 11 & 0
-		\\
-		\hline
-		\rowcolor{red!10} Kali & 1
-		\\
-		\hline
-		
-	\end{tabular}
-	\caption{ECN in risposta a specifico pacchetto}
-	\label{tab:ECN}
-\end{table}
+\subsection{Header per il fingerprinting}
+Gli header aggiunti ad ogni livello sono formati da vari campi contententi informazioni utili per la comunicazione, e il valore che questi assumono in determinate situazioni è dipendente dal sistema operativo che si sta utilizzando.
 
+Si prenda ad esempio l'header del protocollo TCP:\\
 
-\section{Livello 7: analisi protocollo HTTP}
-Sebbene HTTP sia un protocollo a livello applicativo, esso consente ugualmente di ricavare alcune informazioni utili per l'OS fingerprinting: il campo \textit{user-agent}, infatti, contiene informazioni esplicite riguardanti il browser che si sta utilizzando e il sistema operativo in utilizzo. Questo tipo di situazione prende il nome di \textit{banner grabbing}.
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{figures/headerTCP.JPG}
+	\caption{METTERE RIFERIMENTO IMMAGINE: https://www.ionos.it/digitalguide/server/know-how/presentazione-tcp/}
+	\label{headerTCP}
+\end{figure}
 
-A questo livello dello stack, si può inoltre tentare un fingerprinting che vada oltre l'individuazione del sistema operativo, ponendo come obiettivo quello di indovinare il tipo di applicativo in uso.
-Questo è reso possibile dal fatto che HTTP è un protocollo di tipo testuale, pertanto non vi sono campi prefissati per ogni funzione. 
-Ogni header contiene varie coppie, secondo lo schema:\\
-\textbf{chiave:valore} 
-
-
-Questo, a differenza dei protocolli analizzati precedentemente, permette un diverso ordine con le quali le coppie vengono elencate, essendo questo ininfluente per una corretta comunicazione. Analizzare l'ordinamento è molto importante se si vuole tentare di individuare, ad esempio, il tipo di server che sta rispondendo.
-
-
-
-
-
-
+Il campo \textit{option} permette di segnalare al ricevente l'uso di alcune opzioni di comunicazione, come il window scaling; il loro supporto e l'effettivo utilizzo, essendo queste facoltative e quindi peculiari di specifici sistemi operativi, rivestono quindi particolare importanza ai fini del fingerprinting.
+Esempi analoghi si possono trovare nei protocolli di tutti i livelli dello stack, e l'unione delle informazioni acquisite consente di poter individuare con una discreta precisione il sistema operativo del dispositivo target.

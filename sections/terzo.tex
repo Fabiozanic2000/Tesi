@@ -1,0 +1,114 @@
+\chapter{Analisi}
+L'attività di analisi iniziale, ovvero senza l'ausilio di librerie specifiche per l'invio di determinati pacchetti, è stata effettuata installando un Server Apache sia su Windows 11 che su sistema operativo Kali.
+Si è quindi proceduto ad inviare richieste ai server tramite browser web e all'analisi dei pacchetti ricevuti in risposta con l'utilizzo di Wireshark.
+Successivamente sono state analizzate anche le risposte a determinati pacchetti inviati con Scapy.
+Di seguito sono riportate le differenze più importanti rilevate durante l'intera attività di analisi.
+
+\section{Livello 3: protocolli IP e ICMP}
+È stata effettuata in primis l'analisi del TTL, essendo un valore estremamente semplice da analizzare.
+Questo campo contiene un numero intero che viene decrementato ad ogni \textit{hop}, cioè ad ogni router che incontra nel percorso verso l'host ricevente, e viene eliminato dalla rete quando questo raggiunge lo 0.
+Il protocollo, però, non impone nessun valore di partenza, lasciandolo decidere al sistema operativo del mittente; l'unico limite è rappresentato dagli 8 bit riservati a quel campo (ovvero ad un valore massimo di 255).
+L'analisi ha portato ad evidenziare la seguente differenza riguardo al TTL:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ l | c }
+		\hline
+		\rowcolor{blue!10} Windows 11 & 128
+		\\
+		\hline
+		\rowcolor{red!10} Kali & 7
+		\\
+		\hline
+		
+	\end{tabular}
+	\caption{TTL iniziale}
+	\label{tab:TTL}
+\end{table}
+
+È inoltre stata effettuata l'analisi del protocollo ICMP, e in particolare è stata notata una differenza nel campo \textit{code} in caso di risposta a determinati pacchetti inviati utilizzando la libreria di Python scapy.
+\\
+
+METTERE SCREEN DEL MINISCRIPT IN PYTHON.
+
+Questo comando invia un pacchetto ICMP con il campo \textit{code} impostato ad un numero diverso da zero: in questo specifico contesto, Windows 11 risponde inviando un pacchetto in cui \textit{code}=0, mentre Kali copia il valore che ha ricevuto nella richiesta.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{  l | c }
+		\hline
+		\rowcolor{blue!10} Windows 11 & 0
+		\\
+		\hline
+		\rowcolor{red!10} Kali & Stesso valore inviato nella richiesta
+		\\
+		\hline
+
+	\end{tabular}
+	\caption{Campo code quando nella richiesta è diverso da 0}
+	\label{tab:code}
+\end{table}
+
+\section{Livello 4: analisi protocollo TCP}
+Il livello 4 dello stack è formato da due protocolli: Transmission Control Protocol (TCP) e User Datagram Protocol (UDP). Entrambi forniscono informazioni utili per il fingerprinting, ma il TCP possiede un numero maggiore di campi e di opzioni utilizzabili, pertanto è stata data priorità all'analisi di quest'ultimo.
+
+Analizzando l'handshake TCP, si può notare una discrepanza nell'utilizzo del Window Scale; quest'opzione consente di aumentare la Window Size oltre il valore che si otterrebbe settando tutti i bit di quel campo a 1.
+L'utilizzo di questa opzione viene concordato nei segmenti SYN e SYN+ACK dell'handshake e il suo valore non viene più modificato per il resto della connessione. Confrontando i valori ottenuti da Windows 11 e Kali, si ottiene il seguente risultato:
+\\
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{ l | c }
+		\hline
+		\rowcolor{blue!10} Windows 11 & 8
+		\\
+		\hline
+		\rowcolor{red!10} Kali & 7
+		\\
+		\hline
+		
+	\end{tabular}
+	\caption{Window Scaling Factor}
+	\label{tab:Window Scale}
+\end{table}
+
+Continuando l'analisi si possono notare ulteriori differenze riguardanti il flag sulla notifica esplicita di congestione (ECN).
+Se infatti si invia un pacchetto simulando l'inizio di un handshake (SYN) con i flag sulla congestione attivi, si otterranno risultati differenti tra Windows 11 e Kali nel pacchetto di risposta (che sarà ovviamente un SYN+ACK, secondo passo dell'handshake):\\
+
+\begin{figure}[]
+	\includegraphics[width=\textwidth]{figures/congestione.png}
+	\caption{Comando python per l'invio del pacchetto specifico}
+	\label{congestione}
+\end{figure}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ l | c }
+		\hline
+		\rowcolor{blue!10} Windows 11 & 0
+		\\
+		\hline
+		\rowcolor{red!10} Kali & 1
+		\\
+		\hline
+		
+	\end{tabular}
+	\caption{ECN in risposta a specifico pacchetto}
+	\label{tab:ECN}
+\end{table}
+
+
+\section{Livello 7: analisi protocollo HTTP}
+Sebbene HTTP sia un protocollo a livello applicativo, esso consente ugualmente di ricavare alcune informazioni utili per l'OS fingerprinting: il campo \textit{user-agent}, infatti, contiene informazioni esplicite riguardanti il browser che si sta utilizzando e il sistema operativo in utilizzo. Questo tipo di situazione prende il nome di \textit{banner grabbing}.
+
+A questo livello dello stack, si può inoltre tentare un fingerprinting che vada oltre l'individuazione del sistema operativo, ponendo come obiettivo quello di indovinare il tipo di applicativo in uso.
+Questo è reso possibile dal fatto che HTTP è un protocollo di tipo testuale, pertanto non vi sono campi prefissati per ogni funzione. 
+Ogni header contiene varie coppie, secondo lo schema:\\
+\textbf{chiave:valore} 
+
+
+Questo, a differenza dei protocolli analizzati precedentemente, permette un diverso ordine con le quali le coppie vengono elencate, essendo questo ininfluente per una corretta comunicazione. Analizzare l'ordinamento è molto importante se si vuole tentare di individuare, ad esempio, il tipo di server che sta rispondendo.
+
+
+
+
+
+

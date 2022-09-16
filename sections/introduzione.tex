@@ -11,86 +11,37 @@ Il fingerprinting può essere effettuato in due modalità: attiva e passiva. \\
 Nella prima si analizzano le risposte ricevute in seguito ad alcuni pacchetti inviati; questi ultimi sono appositamente costruiti in modo da massimizzare le informazioni che si possono ottenere dalla risposta.
 Nella seconda, invece, viene ispezionato il normale traffico del dispositivo target; si tratta quindi di una tecnica meno invasiva e che si espone meno al rischio di essere scoperti.
 
-\section{Stack TCP/IP}
-Per effettuare comunicazioni tramite internet, vi è il bisogno che tutti i dispositivi connessi rispettino determinati meccanismi; questo si rende necessario a causa dell'elevata eterogeneità derivata da hardware e software differenti.
-Questi meccanismi, che prendono il nome di \textit{protocolli}, sono strutturati secondo diversi layer (livelli) formando lo stack TCP/IP.  \\
-Sebbene l'idea originale prevedesse un modello composto da sette livelli, de facto lo schema attualmente in uso ne prevede solamente quattro. Nonostante ciò, nella terminologia informatica la numerazione è rimasta quella precedente
-
-\begin{table}[htb]
-	\centering
-	\begin{tabular}{| l | c |}
-		\hline
-		Livello 7 & Applicativo
-		\\
-		\hline
-		Livello 4 & Trasporto
-		\\
-		\hline
-		Livello 3 & Rete
-		\\
-		\hline
-		Livello 2 & Fisico
-		\\
-		\hline
-
-	\end{tabular}
-	\caption{Livelli dello stack TCP/IP}
-	\label{tab:stack}
-\end{table}
-
-\subsection{Funzionamento dello stack TCP/IP}
-Si consideri l'esempio dell'invio di una lettera tramite il servizio di poste. La procedura da seguire è la seguente:
-
-\begin{enumerate}
-	\item Il mittente scrive il contenuto del messaggio su un foglio e successivamente lo inserisce nella busta.
-	\item Il mittente scrive, nella busta, il nominativo del destinatario.
-	\item Il mittente scrive il CAP e l'indirizzo del ricevente.
-	\item Il mittente, dopo aver incollato il francobollo, consegna la busta al servizio di poste.
-\end{enumerate}
-
-Si noti che la sequenza di eventi che si verifica per la ricezione della lettera riflette le operazioni effettuate per l'invio, ma in ordine inverso:
-\begin{enumerate}
-	\item Viene controllata la presenza del francobollo.
-	\item Il postino legge l'indirizzo del destinatario e consegna la lettera.
-	\item Verrà letto il nominativo per individuare a quale inquilino è diretta.
-	\item Il destinatario apre la busta e legge il contenuto del messaggio.
-\end{enumerate}
-
-La sequenza di eventi descritta rappresenta ciò che avviene quando si comunica tramite internet. Ad ogni livello dello stack, infatti, vi è un protocollo che aggiunge una sua intestazione (\textit{header}) al pacchetto del mittente, ad iniziare dal livello più alto disponibile per quel dispositivo e il ricevente le valuterà in ordine inverso. Ad ogni layer il protocollo utilizzato può essere differente; fondamentale, ovviamente, che questo sia supportato da entrambi gli attori della conversazione.\\
-La procedura dell'inserimento degli header prende il nome di \textit{incapsulamento}.
-\\
-
-\begin{figure}[h]
-	\includegraphics[width=\textwidth]{figures/incapsulamento.png}
-	\caption{METTERE RIFERIMENTO IMMAGINE: http://infodoc.altervista.org/sistemi-e-reti/incapsulamento/}
-	\label{incapsulamento}
-\end{figure}
-
-\subsection{Header per il fingerprinting}
-Gli header aggiunti ad ogni livello sono formati da vari campi contententi informazioni utili per la comunicazione, e il valore che questi assumono in determinate situazioni è dipendente dal sistema operativo che si sta utilizzando.
-
-Si prenda ad esempio l'header del protocollo TCP:\\
-
-\begin{figure}[h]
-	\includegraphics[width=\textwidth]{figures/headerTCP.JPG}
-	\caption{METTERE RIFERIMENTO IMMAGINE: https://www.ionos.it/digitalguide/server/know-how/presentazione-tcp/}
-	\label{headerTCP}
-\end{figure}
-
-Il campo \textit{option} permette di segnalare al ricevente l'uso di alcune opzioni di comunicazione, come il window scaling; il loro supporto e l'effettivo utilizzo, essendo queste facoltative e quindi peculiari di specifici sistemi operativi, rivestono quindi particolare importanza ai fini del fingerprinting.
-Esempi analoghi si possono trovare nei protocolli di tutti i livelli dello stack, e l'unione delle informazioni acquisite consente di poter individuare con una discreta precisione il sistema operativo del dispositivo target.
 
 
 
 
-\section{Strumenti per il fingerprinting}
-Esistono numerosi tool per effettuare il fingerprinting, che eseguono anche attività correlate e fondamentali per quest'ultimo come ad esempio il port scanning.
-Nel corso di questo documento si farà riferimento a due strumenti:
+
+%\section{Strumenti per il fingerprinting}
+%Esistono numerosi tool per effettuare il fingerprinting, che eseguono anche attività correlate e fondamentali per quest'ultimo come ad esempio il port scanning.
+%Nel corso di questo documento si farà riferimento a due strumenti:
+%\begin{itemize}
+%	\item Nmap, per il fingerprinting attivo
+%	\item p0f, per il fingerprinting passivo
+%\end{itemize}
+
+\section{Obiettivo}
+L'obiettivo consiste nell'analizzare le differenze che portano all'individuazione del sistema operativo, e successivamente modificare determinati parametri del sistema operativo in modo da riuscire ad ingannare i principali strumenti per il fingereprinting.
+I risultati ottenuti da quest'ultimi, quindi, dovranno essere errati e portare all'individuazione di un sistema operativo differente rispetto a quello realmente in uso.\\
+Si è proceduto utilizzando un server HTTP, ovvero con pacchetti di dati non cifrati; si è successivamente cercato di effettuare un fingerprinting sull'handshake TLS, ovvero sullo scambio di messaggi che precede una comunicazione cifrata.
+
+\section{Strumenti e sistemi operativi utilizzati}
+Per la realizzazione dell'obiettivo sono stati utilizzati due differenti sistemi operativi: Windows 11 e Kali (una distribuzione Linux basata su Debian).
+La motivazione risiede nel fatto che Windows sia il sistema più diffuso al mondo e quindi un risultato che individui quello come sistema operativo risulti plausibile agli occhi di chi vuole effettuare il fingerptinging.
+
+I tool utilizzati sono stati i seguenti:
 \begin{itemize}
-	\item Nmap, per il fingerprinting attivo
-	\item p0f, per il fingerprinting passivo
+	\item \textbf{Nmap}: principale strumento per effettuare fingerprinting attivo tramite l'invio di specifici pacchetti (\textit{probe})  in grado di evidenziare il più possibile il comportamento del sistema operativo target. Consente inoltre di effettuare altre operazioni, alcune delle quali fondamentali per il fingerprinting stesso, come ad esempio il port scanning.
+	\item \textbf{p0f}: tool per effettuare fingerprinting passivo. Esso analizza solamente i pacchetti ricevuti da una determinata interfaccia o analizza quelli passati tramite un file con estensione pcap. È in grado di effettuare anche fingerprinting a livello 7.
+	\item \textbf{Wireshark}: si tratta di uno strumento che permette la visualizzazione dei pacchetti inviati e ricevuti dal dispositivo tramite un'interfaccia grafica. Consente inoltre di filtrare pacchetti sulla base di certi campi o protocolli utilizzati.
+	\item \textbf{Server Apache}: Web server che consente di rispondere alle richieste di tipo HTTP. È stato installato sia su Windows 11 che su Kali per poter effettuare il confronto tra le risposte inviate.
+	\item \textbf{Scapy}: libreria Python in grado di inviare pacchetti modificabili in ogni campo. Molto utile il suo utilizzo per quanto riguarda l'invio di pacchetti "patologici" che stimolano risposte utili ai fini del fingerprinting.
+	\item \textbf{nftables}: tool per che permette la modifica o il blocco di pacchetti sulla base del loro contenuto negli header.
 \end{itemize}
-
 
 	
 

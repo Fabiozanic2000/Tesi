@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.9)  16 SEP 2022 03:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.9)  16 SEP 2022 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -608,50 +608,42 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.18 
+l.31 
       [1
 
 
+] [2]) (sections/secondo.tex [3]
+Capitolo 2.
+[4
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 59--62
-
- []
-
-[2]
-<figures/incapsulamento.png, id=102, 601.4972pt x 295.85532pt>
+<figures/incapsulamento.png, id=98, 601.4972pt x 295.85532pt>
 File: figures/incapsulamento.png Graphic file (type png)
 <use figures/incapsulamento.png>
-Package pdftex.def Info: figures/incapsulamento.png  used on input line 64.
+Package pdftex.def Info: figures/incapsulamento.png  used on input line 56.
 (pdftex.def)             Requested size: 441.01773pt x 216.92963pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--65
-[]\T1/cmr/m/n/12 Figura 1.1: []METTERE RI-FE-RI-MEN-TO IM-MA-GI-NE:
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]\T1/cmr/m/n/12 Figura 2.1: []METTERE RI-FE-RI-MEN-TO IM-MA-GI-NE:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-<figures/headerTCP.JPG, id=104, 1161.33875pt x 391.4625pt>
+<figures/headerTCP.JPG, id=100, 1161.33875pt x 391.4625pt>
 File: figures/headerTCP.JPG Graphic file (type jpg)
 <use figures/headerTCP.JPG>
-Package pdftex.def Info: figures/headerTCP.JPG  used on input line 75.
+Package pdftex.def Info: figures/headerTCP.JPG  used on input line 67.
 (pdftex.def)             Requested size: 441.01773pt x 148.65575pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
-[]\T1/cmr/m/n/12 Figura 1.2: []METTERE RI-FE-RI-MEN-TO IM-MA-GI-NE:
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]\T1/cmr/m/n/12 Figura 2.2: []METTERE RI-FE-RI-MEN-TO IM-MA-GI-NE:
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3 <./figures/incapsulamento.png>]) (sections/primo.tex [4 <./figures/headerTCP
+[5 <./figures/incapsulamento.png>]) (sections/terzo.tex [6 <./figures/headerTCP
 .JPG>]
-Capitolo 2.
-[5
-
-]) (sections/secondo.tex [6]
 Capitolo 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 28--30
@@ -670,36 +662,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--75
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 76.
 
-<figures/congestione.png, id=137, 493.0922pt x 81.30376pt>
+<figures/congestione.png, id=124, 493.0922pt x 81.30376pt>
 File: figures/congestione.png Graphic file (type png)
 <use figures/congestione.png>
 Package pdftex.def Info: figures/congestione.png  used on input line 77.
 (pdftex.def)             Requested size: 441.01773pt x 72.72112pt.
 [9 <./figures/congestione.png>]) [10] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7451D359733257091E838DDF6E1F0224;2474.
+(rerunfilecheck)             Checksum: FC3DAFEA657FE30B1275916A8F7B4730;2012.
  ) 
 Here is how much of TeX's memory you used:
- 14050 strings out of 475389
- 218414 string characters out of 2777001
- 762474 words of memory out of 3000000
+ 14041 strings out of 475389
+ 218352 string characters out of 2777001
+ 761474 words of memory out of 3000000
  35153 multiletter control sequences out of 15000+600000
  482549 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,77p,571b,519s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+ 72i,12n,77p,548b,521s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti
 1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecrm1000.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecti1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+0\tcrm1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecrm1000.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\ecbx1728.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/
 ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\sanic\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\sanic\AppData\Loca
 l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk>
-Output written on main.pdf (12 pages, 200507 bytes).
+Output written on main.pdf (12 pages, 193091 bytes).
 PDF statistics:
- 469 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 120 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 112 words of extra memory for PDF output out of 10000 (max. 10000000)
 
