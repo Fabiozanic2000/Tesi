@@ -6,39 +6,26 @@
 \section{OS Fingerprinting}
 \label{citazioni}
 
-L'OS fingerprinting consiste nel rilevare da remoto il sistema operativo di un dispositivo analizzandone i pacchetti inviati. Le differenze di implementazione dello stack TCP/IP, infatti, determinano comportamenti diversi che, analizzati, consentono di ottenere informazioni importanti. \\
+L'OS fingerprinting consiste nel rilevare da remoto il sistema operativo di un dispositivo analizzandone i pacchetti inviati. Le differenze di implementazione dello stack TCP/IP, infatti, determinano comportamenti diversi che, analizzati, consentono di ottenere informazioni utili a questo scopo. \\
 Il fingerprinting può essere effettuato in due modalità: attiva e passiva. \\ 
-Nella prima si analizzano le risposte ricevute in seguito ad alcuni pacchetti inviati; questi ultimi sono appositamente costruiti in modo da massimizzare le informazioni che si possono ottenere dalla risposta.
+Nella prima si analizzano le risposte ricevute in seguito ad alcuni pacchetti inviati; questi sono appositamente costruiti in modo da massimizzare le informazioni che si possono ottenere dalla risposta.
 Nella seconda, invece, viene ispezionato il normale traffico del dispositivo target; si tratta quindi di una tecnica meno invasiva e che si espone meno al rischio di essere scoperti.
 
-
-
-
-
-
-%\section{Strumenti per il fingerprinting}
-%Esistono numerosi tool per effettuare il fingerprinting, che eseguono anche attività correlate e fondamentali per quest'ultimo come ad esempio il port scanning.
-%Nel corso di questo documento si farà riferimento a due strumenti:
-%\begin{itemize}
-%	\item Nmap, per il fingerprinting attivo
-%	\item p0f, per il fingerprinting passivo
-%\end{itemize}
-
 \section{Obiettivo}
-L'obiettivo consiste nell'analizzare le differenze che portano all'individuazione del sistema operativo, e successivamente modificare determinati parametri del sistema operativo in modo da riuscire ad ingannare i principali strumenti per il fingereprinting.
-I risultati ottenuti da quest'ultimi, quindi, dovranno essere errati e portare all'individuazione di un sistema operativo differente rispetto a quello realmente in uso.\\
-Si è proceduto utilizzando un server HTTP, ovvero con pacchetti di dati non cifrati; si è successivamente cercato di effettuare un fingerprinting sull'handshake TLS, ovvero sullo scambio di messaggi che precede una comunicazione cifrata.
+L'obiettivo consiste nell'analizzare le differenze che portano all'individuazione del sistema operativo, e successivamente modificare determinati parametri di quest'ultimo in modo da riuscire ad ingannare i principali strumenti per il fingereprinting.
+I risultati ottenuti, quindi, dovranno essere errati e portare all'individuazione di un sistema operativo differente rispetto a quello realmente in uso.\\
+Si è proceduto utilizzando un server HTTP, gestendo quindi pacchetti di non cifrati; si è successivamente cercato di effettuare un'analisi sull'handshake TLS, ovvero sullo scambio di messaggi che precede una comunicazione cifrata.
 
 \section{Strumenti e sistemi operativi utilizzati}
 Per la realizzazione dell'obiettivo sono stati utilizzati due differenti sistemi operativi: Windows 11 e Kali (una distribuzione Linux basata su Debian).
-La motivazione risiede nel fatto che Windows sia il sistema più diffuso al mondo e quindi un risultato che individui quello come sistema operativo risulti plausibile agli occhi di chi vuole effettuare il fingerptinging.
+La motivazione della scelta di questi sistemi risiede nel fatto che Kali sia stato progettato per la sicurezza informatica, e Windows sia il sistema operativo attualmente più utilizzato; per questa ragione, l'individuazione di quest'ultimo (seppur falsificata) desterebbe meno sospetti. 
 
 I tool utilizzati sono stati i seguenti:
 \begin{itemize}
-	\item \textbf{Nmap}: principale strumento per effettuare fingerprinting attivo tramite l'invio di specifici pacchetti (\textit{probe})  in grado di evidenziare il più possibile il comportamento del sistema operativo target. Consente inoltre di effettuare altre operazioni, alcune delle quali fondamentali per il fingerprinting stesso, come ad esempio il port scanning.
-	\item \textbf{p0f}: tool per effettuare fingerprinting passivo. Esso analizza solamente i pacchetti ricevuti da una determinata interfaccia o analizza quelli passati tramite un file con estensione pcap. È in grado di effettuare anche fingerprinting a livello 7.
-	\item \textbf{Wireshark}: si tratta di uno strumento che permette la visualizzazione dei pacchetti inviati e ricevuti dal dispositivo tramite un'interfaccia grafica. Consente inoltre di filtrare pacchetti sulla base di certi campi o protocolli utilizzati.
-	\item \textbf{Server Apache}: Web server che consente di rispondere alle richieste di tipo HTTP. È stato installato sia su Windows 11 che su Kali per poter effettuare il confronto tra le risposte inviate.
+	\item \textbf{Nmap}: principale strumento per effettuare fingerprinting attivo tramite l'invio di specifici pacchetti (\textit{probe}) costruiti appositamente per massimizzare le differenze tra i comportamenti dei sistemi operativi. Consente inoltre di effettuare altre operazioni, alcune delle quali fondamentali per il fingerprinting stesso, come ad esempio il port scanning.
+	\item \textbf{p0f}: tool per effettuare fingerprinting passivo. Esso analizza solamente i pacchetti ricevuti da una determinata interfaccia o analizza quelli passati tramite un file con estensione pcap. È anche in grado di effettuare fingerprinting a livello 7.
+	\item \textbf{Wireshark}: si tratta di uno strumento che permette la visualizzazione dei pacchetti inviati e ricevuti dal dispositivo tramite un'interfaccia grafica. Consente inoltre di filtrare pacchetti sulla base di determinati campi o protocolli utilizzati.
+	\item \textbf{Server Apache}: Web server che consente di rispondere alle richieste di tipo HTTP/HTTPS. È stato installato sia su Windows 11 che su Kali per poter effettuare il confronto tra le risposte inviate.
 	\item \textbf{Scapy}: libreria Python in grado di inviare pacchetti modificabili in ogni campo. Molto utile il suo utilizzo per quanto riguarda l'invio di pacchetti "patologici" che stimolano risposte utili ai fini del fingerprinting.
 	\item \textbf{nftables}: tool per che permette la modifica o il blocco di pacchetti sulla base del loro contenuto negli header.
 \end{itemize}
