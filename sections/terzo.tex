@@ -1,7 +1,7 @@
 \chapter{Analisi}
-L'attività di analisi iniziale, ovvero senza l'ausilio di librerie specifiche per l'invio di determinati pacchetti, è stata effettuata installando un Server Apache sia su Windows 11 che su sistema operativo Kali.
+L'attività di analisi iniziale, ovvero senza l'ausilio di librerie specifiche per l'invio di determinati pacchetti, è stata effettuata installando un server Apache sia su Windows 11 che su Kali.
 Si è quindi proceduto ad inviare richieste ai server tramite browser web e all'analisi dei pacchetti ricevuti in risposta con l'utilizzo di Wireshark.
-Successivamente sono state analizzate anche le risposte a determinati pacchetti inviati con Scapy.
+Successivamente sono state analizzate anche le risposte a determinati pacchetti inviati utilizzando la libreria Scapy.
 Di seguito sono riportate le differenze più importanti rilevate durante l'intera attività di analisi.
 \section{Analisi a livello 2}
 
@@ -30,12 +30,13 @@ L'analisi ha portato ad evidenziare la seguente differenza riguardo al TTL:
 È inoltre stata effettuata l'analisi del protocollo ICMP, e in particolare è stata notata una differenza nel campo \textit{code} in caso di risposta a determinati pacchetti inviati utilizzando la libreria di Python scapy.
 \\
 
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{figures/icmp.png}
-	\caption{Comando python per l'invio del pacchetto specifico}
-	\label{congestione}
-\end{figure}
-
+\begin{lstlisting}[language=Python, caption={Comando Python per l'invio del pacchetto}]
+	from scapy.all import *
+	
+	pkt = sr1(IP(dst='192.168.63.1')/ICMP(code=9))
+	pkt.show()
+	
+\end{lstlisting}
 Questo comando invia un pacchetto ICMP con il campo \textit{code} impostato ad un numero casuale, in questo caso 14: in questo specifico contesto, Windows 11 risponde inviando un pacchetto in cui \textit{code}=0, mentre Kali copia il valore che ha ricevuto nella richiesta.
 
 \begin{table}[h]
@@ -79,12 +80,14 @@ L'utilizzo di questa opzione viene concordato nei segmenti SYN e SYN+ACK dell'ha
 
 Proseguendo l'analisi si possono notare ulteriori differenze riguardanti il flag sulla notifica esplicita di congestione (ECN). Si tratta di un flag che consente di comunicare a livello end to end una congestione, evitando però la perdita dei pacchetti. Il mittente, infatti, se riceve un pacchetto contenente quest'informazione diminuisce i pacchetti inviati in quella comunicazione, seguendo specifici algoritmi (ad esempio, Reno). 
 Se si invia un pacchetto simulando l'inizio di un handshake (SYN) con i flag sulla congestione attivi e si osserva la risposta (SYN+ACK), si possono notare risultati differenti tra i pacchetti ricevuti da Windows 11 e Kali:
-
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{figures/congestione.png}
-	\caption{Comando python per l'invio del pacchetto specifico}
-	\label{congestione}
-\end{figure}
+\\
+\begin{lstlisting}[language=Python, caption={Comando Python per l'invio del pacchetto}]
+	from scapy.all import *
+	
+	pkt=sr1(IP(dst='192.168.63.1')/TCP(dport=80, flags='SCE'))
+	pkt.show()
+	
+\end{lstlisting}
 
 \begin{table}[h]
 	\centering

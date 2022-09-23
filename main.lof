@@ -2,12 +2,12 @@
 \babel@toc {italian}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces METTERE RIFERIMENTO IMMAGINE: http://infodoc.altervista.org/sistemi-e-reti/incapsulamento/}}{5}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces METTERE RIFERIMENTO IMMAGINE: https://www.ionos.it/digitalguide/server/know-how/presentazione-tcp/}}{6}{figure.2.2}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Comando python per l'invio del pacchetto specifico}}{8}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Comando python per l'invio del pacchetto specifico}}{9}{figure.3.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Incapsulamento nel modello ISO/OSI}}{5}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Header TCP}}{6}{figure.2.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Pacchetto client hello inviato tramite Microsoft Edge}}{16}{figure.5.1}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Risultato di Nmap}}{14}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Risultato di Nmap dopo il filtraggio dei pacchetti non diretti alla porta 80}}{16}{figure.4.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Pacchetto client hello inviato tramite Microsoft Edge}}{22}{figure.5.1}%
 \addvspace {10\p@ }

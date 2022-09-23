@@ -1,3 +1,15 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{incapsulamento}
+Infodoc.
+\newblock Sistemi e reti: incapsulamento.
+\newblock http://infodoc.altervista.org/sistemi-e-reti/incapsulamento/,
+  visitato in Settembre 2022.
+
+\bibitem{headerTCP}
+Ionos.
+\newblock Presentazione tcp.
+\newblock https://www.ionos.it/digitalguide/server/know-how/presentazione-tcp/,
+  visitato in Settembre 2022.
 
 \end{thebibliography}
