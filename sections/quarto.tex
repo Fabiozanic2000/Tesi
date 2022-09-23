@@ -69,10 +69,11 @@ Il comando dato per ottenere questo comportamento è nel file nftables.conf, nel
 	icmp type 0 icmp code 9 icmp code set 0
 \end{lstlisting}
 
-Si vuole inoltre modificare il valore della Window Size; anche in questo caso, il nuovo valore impostato dovrà rispecchiare il comportamento di Windows.
+Esaminando il database di Nmap, ci si accorge che vi è una differenza nel Window Size tra Kali e Windows 10. Modificare questo campo permette quindi di falsificare un altro test eseguito da Nmap, contribuendo quindi alla realizzazione dell'offuscamento.
+Si procede dunque ad impostare la Window Size come descritta nel database.
 
 \begin{lstlisting}[caption={Modifica della Window Size}]
-	tcp window != 0x2000 tcp window set 0x2000 counter name conta_window
+	tcp window != 0x2000 tcp window set 0x2000
 \end{lstlisting}
 
 Attuando tutte le modifiche elencate fino a questo punto, l'output di Nmap risulta essere il seguente:
@@ -111,6 +112,8 @@ Si tratta di un fingerprinting che Nmap definisce "aggressivo", dovuto al fatto 
 \section{Offuscamento da fingerprinting passivo}
 Le tecniche seguite per ingannare i tool di fingerprinting passivo non presentano numerose differenze rispetto alle precedenti; vi è però da considerare il fatto che i pacchetti analizzati non sono ricevuti in risposta a determinati probe.
 Questo rende alcune regole impostate precedentemente non più funzionanti, come ad esempio la \ref{codice_icmp}; in questo caso, infatti, l'host non riceve alcun pacchetto echo request con campo code impostato a 9.
+
+
 
 
 

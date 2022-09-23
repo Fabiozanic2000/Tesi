@@ -1,6 +1,5 @@
-\chapter{Teoria}
+\chapter{Base knowledge}
 
-\section{Stack TCP/IP}
 Per effettuare comunicazioni tramite internet, vi è il bisogno che tutti i dispositivi connessi rispettino determinati meccanismi; questo si rende necessario a causa dell'elevata eterogeneità derivata da hardware e software differenti.
 Questi meccanismi, che prendono il nome di \textit{protocolli}, sono strutturati secondo diversi layer (livelli) formando lo stack TCP/IP.  \\
 Sebbene l'idea originale (modello ISO/OSI) prevedesse un modello composto da sette livelli, de facto lo schema attualmente in uso ne prevede solamente quattro. Nonostante ciò, nella terminologia informatica la numerazione dei livelli è rimasta quella precedente.
@@ -27,7 +26,7 @@ Sebbene l'idea originale (modello ISO/OSI) prevedesse un modello composto da set
 	\label{tab:stack}
 \end{table}
 
-\subsection{Funzionamento dello stack TCP/IP}
+\section{Funzionamento dello stack TCP/IP}
 Il meccanismo dello stack prevede che ad ogni livello vengano aggiunte al messaggio delle intestazioni (header), a partire dal layer più alto, che verranno valutate dal medesimo livello del ricevente.
 Si precisa che l'ordine in cui si valutano gli header dei livelli è inverso rispetto a quello del mittente; il ricevente partirà infatti dal livello più basso.
 Questa procedura prende il nome di \textit{incapsulamento} ed è riassunta nella seguente figura:
@@ -41,7 +40,7 @@ Questa procedura prende il nome di \textit{incapsulamento} ed è riassunta nella
 	\cite{incapsulamento}
 \end{figure}
 
-\subsection{Header per il fingerprinting}
+\section{Header per il fingerprinting}
 Gli header aggiunti ad ogni livello sono formati da vari campi contententi informazioni utili per la comunicazione, e il valore che questi assumono in determinate situazioni è dipendente dal sistema operativo che si sta utilizzando.
 
 Si prenda ad esempio l'header TCP, un protocollo del livello 4 dello stack:\\
