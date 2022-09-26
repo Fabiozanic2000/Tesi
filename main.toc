@@ -11,12 +11,14 @@
 \contentsline {section}{\numberline {3.1}Livello 3: protocolli IP e ICMP}{7}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Livello 4: analisi protocollo TCP}{8}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Livello 7: analisi protocollo HTTP}{9}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Offuscamento}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Algoritmo utilizzato da Nmap}{11}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Modifiche al file sysctl.conf}{12}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Modifiche tramite nftables}{13}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Offuscamento da fingerprinting passivo}{17}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Analisi handshake TLS}{19}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Handshake TLS}{20}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Browser fingerprinting}{20}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusioni}{26}{chapter.6}%
+\contentsline {chapter}{\numberline {4}Offuscamento}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Algoritmo utilizzato da Nmap}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Modifiche al file sysctl.conf}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Modifiche tramite nftables}{14}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Offuscamento da fingerprinting passivo}{18}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Analisi handshake TLS}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Handshake TLS}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Browser fingerprinting}{21}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusioni}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Fingerprinting di sistemi operativi}{27}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Fingerprinting di browser tramite HTTP e TLS}{27}{section.6.2}%

@@ -27,26 +27,27 @@ Segue l'elenco di test con il relativo punteggio:
 	T5(R=100%DF=20%T=15%TG=15%W=25%S=20%A=20%F=30%O=10%RD=20%Q=20)
 	T6(R=100%DF=20%T=15%TG=15%W=25%S=20%A=20%F=30%O=10%RD=20%Q=20)
 	T7(R=80%DF=20%T=15%TG=15%W=25%S=20%A=20%F=30%O=10%RD=20%Q=20)
-	U1(R=50%DF=20%T=15%TG=15%IPL=100%UN=100%RIPL=100%RID=100%RIPCK=100%RUCK=100%RUD=100)
+	U1(R=50%DF=20%T=15%TG=15%IPL=100%UN=100%RIPL=100%RID=100%RIPCK=100%
+	RUCK=100%RUD=100)
 	IE(R=50%DFI=40%T=15%TG=15%CD=100)
 \end{lstlisting}
 
 
 \section{Modifiche al file sysctl.conf}
 Per ottenere un sistema operativo differente, occorre modificare alcuni parametri del file sysctl.conf in modo da ottenere i valori di Windows.
-La prima modifica riguarda il campo del TTL; variarlo da 64 a 128 consente di ingannate il test TG. La modifica vale per tutti i pacchetti che verranno inviati, quindi questo consente di spostare un grande quantità di punti a favore del riconoscimento di Windows, essendo il test ripetuto per molti pacchetti.
+La prima modifica riguarda il campo del TTL; variarlo da 64 a 128 consente di ingannare il test T, che calcola il valore iniziale di questo campo. La modifica vale per tutti i pacchetti che verranno inviati, quindi questo consente di spostare un grande quantità di punti a favore del riconoscimento di Windows, essendo il test ripetuto per molti pacchetti.
 
 \begin{lstlisting}[caption={Modifica al campo TTL nel file sysctl.conf}, label=listing_ttl]
 	net.ipv4.ip_default_ttl=128
 \end{lstlisting}
 
-Un'ulteriore modifica può essere effettuata per quanto riguarda il flag ECN, la cui differenza è stata spiegata nel capitolo precedente. Questo riguarda i test della quarta riga, in cui quello specifico per la notifica esplicita di congestione ha un valore di 100 punti.
+Un'ulteriore modifica può essere effettuata per quanto riguarda il flag ECN, la cui differenza è stata spiegata nella sezione \ref{tab:ECN}. Questo riguarda i test della quarta riga, in cui quello specifico per la notifica esplicita di congestione ha un valore di 100 punti.
 
 \begin{lstlisting}[caption={Modifica al campo ECN nel file sysctl.conf}]
 	net.ipv4.tcp_ecn=0
 \end{lstlisting} 
 
-Il valore 0 significa che l'host non può accettare nè inizializzare l'utilizzo del flag ECN. Il comportamento in risposta a determinati pacchetti "patologici" è ora simile a quello di Windows.
+Il valore 0 significa che l'host non può accettare né inizializzare l'utilizzo del flag ECN. Il comportamento in risposta a determinati pacchetti "patologici" è ora simile a quello di Windows.
 
 Si può inoltre procedere modificando il valore della Windows Size massima, causando di conseguenza un cambiamento del valore del Window Scaling Factor, da 7 a 8. 
 La riga scritta nel file è la seguente:
@@ -62,8 +63,8 @@ La modifica dei pacchetti in uscita dall'host di cui si vuole effettuare il fing
 \\
 La differenza mostrata alla tabella \ref{tab:code} è oggetto di uno dei test effettuati da Nmap. Quest'ultimo, infatti, invia un pacchetto \textit{echo request} con campo \textit{code} impostato a 9, e valuta la risposta ricevuta.
 Questa dovrebbe essere zero nel caso di un \textit{echo reply}, ma questo comportamento è in realtà dipendente dal sistema operativo in utilizzo.
-Modificare i pacchetti echo reply in uscita per modificare il campo code nel caso questo sia 9 varia il risultato del test effettuato da Nmap. L'alto valore in termini di punteggio che questo test ha rende questa modifica molto importante ai fini del fingerprinting.\\
-Il comando dato per ottenere questo comportamento è nel file nftables.conf, nella tabella output.
+Manipolare i pacchetti echo reply in uscita per modificare il campo code nel caso questo sia 9 consente la variazione del risultato del test effettuato da Nmap. L'alto valore in termini di punteggio assegnato a questo test rende questa modifica molto importante ai fini dell'offuscamento.\\
+Il comando per ottenere questo comportamento è contenuto nel file nftables.conf, nella tabella output.
 
 \begin{lstlisting}[caption={Modifica del campo code in caso di test Nmap}, label=codice_icmp]
 	icmp type 0 icmp code 9 icmp code set 0
@@ -132,7 +133,7 @@ sig   = *:128:0:*:65535,2:mss,nop,ws,nop,nop,sok:df,id+:0
 \end{lstlisting}
 
 Il primo valore di cui si può notare la differenza si trova in corrispondenza del campo \textit{ittl}, corrispondente al Time To Live iniziale.
-Si tratta che è possibile modificare per ottenere un offuscamento modificando il file sysctl.conf come descritto al listing \ref{listing TTL}.
+Si tratta di un campo che è possibile modificare per ottenere un offuscamento modificando il file sysctl.conf come descritto al listing \ref{listing_ttl}.
 Per quanto riguarda il campo wsize (riferito al Window Size), anche qui vi sono delle diversità, così come per il valore del Window Scaling; entrambi questi valori sono modificabili tramite le regole descritte al listing \ref{listingsize} e \ref{listingscaling}.
 Infine, si può riscontrare una differenza nelle opzioni TCP (campo olayout); queste, infatti, non vengono valutate solamente sul loro utilizzo ma anche nell'ordine in cui queste vengono presentate. È evidente che l'ordinamento utilizzato dai due sistemi operativi sia differente, ma purtroppo non è stato trovato alcun modo per modificare quest'ultime.\\
 Nonostante ciò, p0f non possiede un meccanismo di punteggio come Nmap, e non mostra il sistema operativo più simile a quello effettivamente testato. Questa caratteristica consente quindi di ottenere un offuscamento anche apportando modifiche minime al fine di determinare un nuovo comportamento del sistema operativo che non sia riconducibile a nessuna riga del database.

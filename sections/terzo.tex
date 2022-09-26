@@ -106,15 +106,91 @@ Se si invia un pacchetto simulando l'inizio di un handshake (SYN) con i flag sul
 
 
 \section{Livello 7: analisi protocollo HTTP}
-Sebbene HTTP sia un protocollo a livello applicativo, esso consente ugualmente di ricavare alcune informazioni utili per l'OS fingerprinting: il campo \textit{user-agent}, infatti, contiene informazioni esplicite riguardanti il browser che si sta utilizzando e il sistema operativo in utilizzo. Questo tipo di situazione prende il nome di \textit{banner grabbing}.
+Sebbene HTTP sia un protocollo a livello applicativo, esso consente ugualmente di ricavare alcune informazioni utili per l'OS fingerprinting: il campo \textit{User-Agent}, infatti, contiene informazioni esplicite riguardanti il browser che si sta utilizzando e il sistema operativo in utilizzo. Questo tipo di situazione prende il nome di \textit{banner grabbing}.
 
-A questo livello dello stack, si può inoltre tentare un fingerprinting che vada oltre l'individuazione del sistema operativo, ponendo come obiettivo quello di indovinare il tipo di applicativo in uso.
-Questo è reso possibile dal fatto che HTTP è un protocollo di tipo testuale, pertanto non vi sono campi prefissati per ogni funzione. 
-Ogni header contiene varie coppie, secondo lo schema:\\
+Inoltre, a questo livello dello stack si può tentare un fingerprinting che vada oltre l'individuazione del sistema operativo, ponendo come obiettivo quello di indovinare il tipo di applicativo in uso.
+Questo è reso possibile dal fatto che HTTP è un protocollo di tipo testuale, pertanto non vi sono campi prefissati ij determinati bit per ogni funzione.
+L'header, infatti, contiene varie coppie secondo lo schema:\\
 \textbf{chiave:valore} 
 
 
-Questo, a differenza dei protocolli analizzati precedentemente, permette un diverso ordine con le quali le coppie vengono elencate, essendo questo ininfluente per una corretta comunicazione. Analizzare l'ordinamento è molto importante se si vuole tentare di individuare, ad esempio, il tipo di server che sta rispondendo.
+Questo, a differenza dei protocolli analizzati precedentemente, permette un diverso ordine con le quali le coppie vengono elencate, essendo questo ininfluente per una corretta comunicazione; ne consegue che analizzare l'ordinamento è molto importante se si vuole tentare di individuare, ad esempio, il tipo di client in utilizzo.\\
+
+Osservando i pacchetti HTTP inviati dai principali browser web si possono notare delle differenze sull'ordinamento per quanto riguarda Firefox e altri browser basati su Chromium.
+L'ordine dei campi nell'header è infatti il seguente:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{| c | c |}
+		\hline
+		\textbf{Firefox} & \textbf{Chromium-based}
+		\\
+		\hline
+		Host & Host
+		\\
+		\hline
+		User-Agent & Connection
+		\\
+		\hline
+		Accept & Upgrade-Insecure-Requests
+		\\
+		\hline
+		Accept-language & User-Agent
+		\\
+		\hline
+		Accept-Encoding & Accept
+		\\
+		\hline
+		Connection & Accept-Encoding
+		\\
+		\hline
+		Upgrade-Insecure-Requests & Accept-Language
+		\\
+		\hline
+	\end{tabular}
+	\caption{Ordine campi header HTTP}
+	\label{tab:ordineHTTP}
+\end{table}
+
+Inoltre, analizzando i linguaggi accettati si possono osservare ulteriori disuguaglianze riguardanti il campo \textit{Quality Value}.
+Si tratta di un valore indicato tramite la lettera q (case insensitive)che esprime la preferenza a determinati linguaggi tramite un numero compreso tra 0 e 1, avente massimo tre cifre decimali; il valore di default è 1 ovvero la massima preferenza. \footnote{\url{https://www.rfc-editor.org/rfc/rfc9110.html}}
+
+Segue la stringa di quello specifico campo riguardante Chrome e Firefox:
+
+\begin{lstlisting} [caption={Campo Accept-Language di Chrome}]
+	Acceept-Language: it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Campo Accept-Language di Firefox}]
+	Acceept-Language: it-IT,it;q=0.8,en-US;q=0.5,en;q=0.3
+\end{lstlisting}
+
+Si possono dunque distinguere delle differenze tra i due browser, che ovviamente possono rivestire un ruolo importante in fase di fingerprinting dello User-Agent utilizzato.
+\\
+
+È possibile, inoltre, osservare ulteriori differenze che vi sono tra i due browser analizzando il campo \textit{Accept} dell'Header HTTP. Si osservino infatti i due campi nei due browser web menzionati precedentemente:
+\\
+
+
+\begin{lstlisting}[caption={Campo \textit{Accept} di richiesta GET di Chrome}]
+	text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,
+	image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Campo \textit{Accept} di richiesta GET di Firefox}]
+	text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,
+	image/webp,*/*;q=0.8
+\end{lstlisting}
+
+
+
+
+
+
+
+
+
+
 
 
 

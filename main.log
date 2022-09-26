@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.9)  24 SEP 2022 19:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.9)  26 SEP 2022 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -261,24 +261,34 @@ Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks30
 \verbatim@in@stream=\read3
 )
+(C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen163
+\TX@old@table=\dimen164
+\TX@old@col=\dimen165
+\TX@target=\dimen166
+\TX@delta=\dimen167
+\TX@cols=\count287
+\TX@ftn=\toks31
+)
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count287
+\lst@mode=\count288
 \lst@gtempboxa=\box57
-\lst@token=\toks31
-\lst@length=\count288
-\lst@currlwidth=\dimen163
-\lst@column=\count289
-\lst@pos=\count290
-\lst@lostspace=\dimen164
-\lst@width=\dimen165
-\lst@newlines=\count291
-\lst@lineno=\count292
-\lst@maxwidth=\dimen166
+\lst@token=\toks32
+\lst@length=\count289
+\lst@currlwidth=\dimen168
+\lst@column=\count290
+\lst@pos=\count291
+\lst@lostspace=\dimen169
+\lst@width=\dimen170
+\lst@newlines=\count292
+\lst@lineno=\count293
+\lst@maxwidth=\dimen171
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count293
-\lst@skipnumbers=\count294
+\c@lstnumber=\count294
+\lst@skipnumbers=\count295
 \lst@framebox=\box58
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
@@ -300,11 +310,11 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2022/06/06 4.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count295
+\FV@CodeLineNo=\count296
 \FV@InFile=\read4
 \FV@TabBox=\box59
-\c@FancyVerbLine=\count296
-\FV@StepNumber=\count297
+\c@FancyVerbLine=\count297
+\FV@StepNumber=\count298
 \FV@OutFile=\write3
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
@@ -316,49 +326,49 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ))
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count298
-\output=\toks32
-\linenoprevgraf=\count299
-\linenumbersep=\dimen167
-\linenumberwidth=\dimen168
-\c@linenumber=\count300
-\c@pagewiselinenumber=\count301
-\c@LN@truepage=\count302
-\c@internallinenumber=\count303
-\c@internallinenumbers=\count304
-\quotelinenumbersep=\dimen169
-\bframerule=\dimen170
-\bframesep=\dimen171
+\linenopenalty=\count299
+\output=\toks33
+\linenoprevgraf=\count300
+\linenumbersep=\dimen172
+\linenumberwidth=\dimen173
+\c@linenumber=\count301
+\c@pagewiselinenumber=\count302
+\c@LN@truepage=\count303
+\c@internallinenumber=\count304
+\c@internallinenumbers=\count305
+\quotelinenumbersep=\dimen174
+\bframerule=\dimen175
+\bframesep=\dimen176
 \bframebox=\box60
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count305
-\c@FV@TrueTabCounter=\count306
+\c@FV@TrueTabGroupLevel=\count306
+\c@FV@TrueTabCounter=\count307
 \FV@TabBox@Group=\box61
 \FV@TmpLength=\skip61
-\c@FV@HighlightLinesStart=\count307
-\c@FV@HighlightLinesStop=\count308
-\FV@LoopCount=\count309
+\c@FV@HighlightLinesStart=\count308
+\c@FV@HighlightLinesStop=\count309
+\FV@LoopCount=\count310
 \FV@NCharsBox=\box62
-\FV@BreakIndent=\dimen172
-\FV@BreakIndentNChars=\count310
-\FV@BreakSymbolSepLeft=\dimen173
-\FV@BreakSymbolSepLeftNChars=\count311
-\FV@BreakSymbolSepRight=\dimen174
-\FV@BreakSymbolSepRightNChars=\count312
-\FV@BreakSymbolIndentLeft=\dimen175
-\FV@BreakSymbolIndentLeftNChars=\count313
-\FV@BreakSymbolIndentRight=\dimen176
-\FV@BreakSymbolIndentRightNChars=\count314
-\c@FancyVerbLineBreakLast=\count315
+\FV@BreakIndent=\dimen177
+\FV@BreakIndentNChars=\count311
+\FV@BreakSymbolSepLeft=\dimen178
+\FV@BreakSymbolSepLeftNChars=\count312
+\FV@BreakSymbolSepRight=\dimen179
+\FV@BreakSymbolSepRightNChars=\count313
+\FV@BreakSymbolIndentLeft=\dimen180
+\FV@BreakSymbolIndentLeftNChars=\count314
+\FV@BreakSymbolIndentRight=\dimen181
+\FV@BreakSymbolIndentRightNChars=\count315
+\c@FancyVerbLineBreakLast=\count316
 \FV@LineBox=\box63
 \FV@LineIndentBox=\box64
-\FV@LineWidth=\dimen177
+\FV@LineWidth=\dimen182
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
-\integerpart=\count316
-\decimalpart=\count317
+\integerpart=\count317
+\decimalpart=\count318
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 ) (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
@@ -368,15 +378,15 @@ Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
 ty
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 .code.tex
-\pgfkeys@pathtoks=\toks33
-\pgfkeys@temptoks=\toks34
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 filtered.code.tex
-\pgfkeys@tmptoks=\toks35
+\pgfkeys@tmptoks=\toks36
 )))
-\pgfopts@list@add@a@toks=\toks36
-\pgfopts@list@add@b@toks=\toks37
+\pgfopts@list@add@a@toks=\toks37
+\pgfopts@list@add@b@toks=\toks38
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/newfloat\newfloat.sty
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
@@ -402,18 +412,18 @@ Package: filehook 2020/09/29 v0.8a Hooks for input files
 sty
 Package: filehook-2020 2020/09/29 v0.8a Hooks for input files
 ))
-\c@currfiledepth=\count318
+\c@currfiledepth=\count319
 )
 \pytx@codefile=\write4
 \openout4 = `main.pytxcode'.
 
-\c@pytx@FancyVerbLineTemp=\count319
-\c@pytx@py@default@default=\count320
-\c@pytx@pycon@default@default=\count321
-\c@pytx@sympy@default@default=\count322
-\c@pytx@sympycon@default@default=\count323
-\c@pytx@pylab@default@default=\count324
-\c@pytx@pylabcon@default@default=\count325
+\c@pytx@FancyVerbLineTemp=\count320
+\c@pytx@py@default@default=\count321
+\c@pytx@pycon@default@default=\count322
+\c@pytx@sympy@default@default=\count323
+\c@pytx@sympycon@default@default=\count324
+\c@pytx@pylab@default@default=\count325
+\c@pytx@pylabcon@default@default=\count326
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
@@ -458,11 +468,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count326
+\c@section@level=\count327
 )
-\@linkdim=\dimen178
-\Hy@linkcounter=\count327
-\Hy@pagecounter=\count328
+\@linkdim=\dimen183
+\Hy@linkcounter=\count328
+\Hy@pagecounter=\count329
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
@@ -475,7 +485,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count329
+\Hy@SavedSpaceFactor=\count330
  (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -488,9 +498,9 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4408.
-\c@Hy@tempcnt=\count330
+\c@Hy@tempcnt=\count331
 LaTeX Info: Redefining \url on input line 4746.
-\XeTeXLinkMargin=\dimen179
+\XeTeXLinkMargin=\dimen184
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -500,9 +510,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count331
-\Field@Width=\dimen180
-\Fld@charsize=\dimen181
+\Fld@menulength=\count332
+\Field@Width=\dimen185
+\Fld@charsize=\dimen186
 Package hyperref Info: Hyper figures OFF on input line 6024.
 Package hyperref Info: Link nesting OFF on input line 6029.
 Package hyperref Info: Hyper index ON on input line 6032.
@@ -515,9 +525,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6054.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count332
-\c@Item=\count333
-\c@Hfootnote=\count334
+\Hy@abspage=\count333
+\c@Item=\count334
+\c@Hfootnote=\count335
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -528,8 +538,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count335
-\c@bookmark@seq@number=\count336
+\Fld@listcount=\count336
+\c@bookmark@seq@number=\count337
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -568,17 +578,17 @@ rs
 )
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 115.
+less on input line 116.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 117.
+less on input line 118.
 
 
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2022-08-30 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count337
+\l__color_backend_stack_int=\count338
 \l__pdf_internal_box=\box65
 ) (main.aux
 
@@ -587,26 +597,26 @@ LaTeX Warning: Label `tab:cifrari' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Info: Redefining \it@ocap on input line 145.
-LaTeX Info: Redefining \it@ccap on input line 145.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Info: Redefining \it@ocap on input line 146.
+LaTeX Info: Redefining \it@ccap on input line 146.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -646,17 +656,17 @@ LaTeX Info: Redefining \it@ccap on input line 145.
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count338
-\scratchdimen=\dimen182
+\scratchcounter=\count339
+\scratchdimen=\dimen187
 \scratchbox=\box66
-\nofMPsegments=\count339
-\nofMParguments=\count340
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count341
-\MPscratchDim=\dimen183
-\MPnumerator=\count342
-\makeMPintoPDFobject=\count343
-\everyMPtoPDFconversion=\toks39
+\nofMPsegments=\count340
+\nofMParguments=\count341
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count342
+\MPscratchDim=\dimen188
+\MPnumerator=\count343
+\makeMPintoPDFobject=\count344
+\everyMPtoPDFconversion=\toks40
 )
 (C:\Users\sanic\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -668,28 +678,28 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count344
+\c@lstlisting=\count345
 Package newfloat Info: `float' package detected.
 
 No file pythontex-files-main/main.pytxmcr.
 Run PythonTeX to create it.
 Package newfloat Info: New float `listing' with options `fileext=lopytx' on inp
-ut line 145.
-\c@listing=\count345
-Package newfloat Info: float type `listing'=8 on input line 145.
-\c@lopytxdepth=\count346
-Package hyperref Info: Link coloring OFF on input line 145.
+ut line 146.
+\c@listing=\count346
+Package newfloat Info: float type `listing'=8 on input line 146.
+\c@lopytxdepth=\count347
+Package hyperref Info: Link coloring OFF on input line 146.
 (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--182
+Underfull \hbox (badness 10000) in paragraph at lines 180--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--182
+Underfull \hbox (badness 10000) in paragraph at lines 180--183
 
  []
 
@@ -699,11 +709,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--182
 {C:/Users/sanic/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 199.
+less on input line 200.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 199.
+less on input line 200.
 
 [1
 
@@ -726,14 +736,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2
 
 
-]
+] [3]
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 210.
+less on input line 211.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 210.
+less on input line 211.
 
 (sections/introduzione.tex
 Capitolo 1.
@@ -758,7 +768,7 @@ Capitolo 2.
 [4
 
 ]
-<figures/incapsulamento.png, id=167, 601.4972pt x 295.85532pt>
+<figures/incapsulamento.png, id=181, 601.4972pt x 295.85532pt>
 File: figures/incapsulamento.png Graphic file (type png)
 <use figures/incapsulamento.png>
 Package pdftex.def Info: figures/incapsulamento.png  used on input line 37.
@@ -768,11 +778,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<figures/headerTCP.JPG, id=170, 1161.33875pt x 391.4625pt>
+<figures/headerTCP.JPG, id=184, 868.74562pt x 233.37187pt>
 File: figures/headerTCP.JPG Graphic file (type jpg)
 <use figures/headerTCP.JPG>
 Package pdftex.def Info: figures/headerTCP.JPG  used on input line 50.
-(pdftex.def)             Requested size: 441.01773pt x 148.65575pt.
+(pdftex.def)             Requested size: 441.01773pt x 118.47324pt.
 [5 <./figures/incapsulamento.png>]) (sections/terzo.tex [6 <./figures/headerTCP
 .JPG>]
 Capitolo 3.
@@ -790,39 +800,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
-[9]) (sections/quarto.tex [10]
-Capitolo 4.
-[11
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
-]
-Overfull \hbox (74.86023pt too wide) in paragraph at lines 30--31
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[12] [13]
-<figures/primo_nmap.png, id=253, 412.54124pt x 425.33907pt>
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
+
+ []
+
+) (sections/quarto.tex [11]
+Capitolo 4.
+[12
+
+] [13] [14]
+<figures/primo_nmap.png, id=289, 412.54124pt x 425.33907pt>
 File: figures/primo_nmap.png Graphic file (type png)
 <use figures/primo_nmap.png>
-Package pdftex.def Info: figures/primo_nmap.png  used on input line 83.
+Package pdftex.def Info: figures/primo_nmap.png  used on input line 84.
 (pdftex.def)             Requested size: 350.66171pt x 361.5399pt.
- [14 <./figures/primo_nmap.png>]
-<figures/windows_nmap.png, id=264, 480.29437pt x 536.0025pt>
+ [15 <./figures/primo_nmap.png>]
+<figures/windows_nmap.png, id=299, 480.29437pt x 536.0025pt>
 File: figures/windows_nmap.png Graphic file (type png)
 <use figures/windows_nmap.png>
-Package pdftex.def Info: figures/windows_nmap.png  used on input line 105.
+Package pdftex.def Info: figures/windows_nmap.png  used on input line 106.
 (pdftex.def)             Requested size: 408.25214pt x 455.60428pt.
- [15] [16 <./figures/windows_nmap.png>]
+ [16] [17 <./figures/windows_nmap.png>]
 
-LaTeX Warning: Reference `listing TTL' on page 17 undefined on input line 135.
+LaTeX Warning: Reference `listingsize' on page 18 undefined on input line 137.
 
-
-LaTeX Warning: Reference `listingsize' on page 17 undefined on input line 136.
-
-[17]) (sections/quinto.tex [18]
+[18]) (sections/quinto.tex [19]
 Capitolo 5.
-[19
+[20
 
-] [20]
+] [21]
 Underfull \hbox (badness 10000) in paragraph at lines 54--79
 
  []
@@ -832,36 +849,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 193--218
+[22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 195--220
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 220--224
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--226
 
  []
 
-<figures/cifrario_ripetuto.png, id=348, 386.94562pt x 344.03531pt>
+<figures/cifrario_ripetuto.png, id=383, 386.94562pt x 344.03531pt>
 File: figures/cifrario_ripetuto.png Graphic file (type png)
 <use figures/cifrario_ripetuto.png>
-Package pdftex.def Info: figures/cifrario_ripetuto.png  used on input line 227.
+Package pdftex.def Info: figures/cifrario_ripetuto.png  used on input line 229.
 
 (pdftex.def)             Requested size: 441.01773pt x 392.11508pt.
-[23] [24 <./figures/cifrario_ripetuto.png>]) (sections/sesto.tex [25]
+[24] [25 <./figures/cifrario_ripetuto.png>]) (sections/sesto.tex [26]
 Capitolo 6.
-) [26
+[27
 
-] [27
+]) [28] [29
 
 ] (main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- (main.bbl [28
+ (main.bbl [30
 
 
-]) [29
+]) [31
 
 ] (main.aux)
 
@@ -871,16 +888,16 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 521573B49D09BBEFEF7EDECD2A0D205E;3430.
+(rerunfilecheck)             Checksum: CE47578E4DD27C63365E67D7CC947EC8;3962.
  ) 
 Here is how much of TeX's memory you used:
- 17965 strings out of 475389
- 296084 string characters out of 2777001
- 894660 words of memory out of 3000000
- 38856 multiletter control sequences out of 15000+600000
+ 18067 strings out of 475389
+ 297602 string characters out of 2777001
+ 895924 words of memory out of 3000000
+ 38937 multiletter control sequences out of 15000+600000
  487970 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,12n,81p,639b,1349s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 76i,13n,81p,639b,1349s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecbx1000.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -890,17 +907,17 @@ pen/ec/dpi600\ectt1000.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour
 ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\sanic\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\sanic\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\sanic\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\sanic\
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\sanic\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\sanic\
 AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\
 sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\
 Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk
 > <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1
 440.pk> <C:\Users\sanic\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
 \ecbx1440.pk>
-Output written on main.pdf (32 pages, 554288 bytes).
+Output written on main.pdf (35 pages, 597399 bytes).
 PDF statistics:
- 912 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 969 PDF objects out of 1000 (max. 8388607)
+ 179 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 
