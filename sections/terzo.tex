@@ -1,9 +1,17 @@
 \chapter{Analisi}
-L'attività di analisi iniziale, ovvero senza l'ausilio di librerie specifiche per l'invio di determinati pacchetti, è stata effettuata installando un server Apache sia su Windows 11 che su Kali.
-Si è quindi proceduto ad inviare richieste ai server tramite browser web e all'analisi dei pacchetti ricevuti in risposta con l'utilizzo di Wireshark.
-Successivamente sono state analizzate anche le risposte a determinati pacchetti inviati utilizzando la libreria Scapy.
-Di seguito sono riportate le differenze più importanti rilevate durante l'intera attività di analisi.
 
+\section{Procedura}
+%L'attività di analisi iniziale, ovvero senza l'ausilio di librerie specifiche per l'invio di determinati pacchetti, è stata effettuata installando un server Apache sia su Windows 11 che su Kali.
+%Si è quindi proceduto ad inviare richieste ai server tramite browser web e all'analisi dei pacchetti ricevuti in risposta con l'utilizzo di Wireshark.
+%Successivamente sono state analizzate anche le risposte a determinati pacchetti inviati utilizzando la libreria Scapy.
+%Di seguito sono riportate le differenze più importanti rilevate durante l'intera attività di analisi.
+L'analisi dei pacchetti per l'individuazione delle differenze è stata effettuata sulle risposte ricevute da server Apache installati su Windows 11 e su Kali.
+L'attività si analisi è stata svolta in due differenti modalità:
+\begin{enumerate}
+	\item Nella prima sono state analizzate le risposte ricevute in seguito a richieste GET HTTP inviate tramite browser web; la cattura e l'osservazione di queste è stata effettuata tramite Wireshark.
+	\item Nella seconda si è proceduto con l'ispezione delle risposte a specifici pacchetti inviati utilizzando la funzione sr1 della libreria Python Scapy, che permette la cattura delle risposte ai pacchetti inviati. Le risposte sono state esaminate con la funzione show.
+\end{enumerate}
+Di seguito vengono mostrate le principali differenze notate tra i due sistemi operativi durante l'intera attività di analisi.
 
 \section{Livello 3: protocolli IP e ICMP}
 È stata effettuata in primis l'analisi del TTL (\textit{Time To Live}), essendo un valore estremamente semplice da analizzare.
@@ -17,7 +25,7 @@ L'analisi ha portato ad evidenziare la seguente differenza riguardo al TTL:
 		\rowcolor{blue!10} Windows 11 & 128
 		\\
 		\hline
-		\rowcolor{red!10} Kali & 7
+		\rowcolor{red!10} Kali & 64
 		\\
 		\hline
 		
@@ -26,8 +34,10 @@ L'analisi ha portato ad evidenziare la seguente differenza riguardo al TTL:
 	\label{tab:TTL}
 \end{table}
 
-È inoltre stata effettuata l'analisi del protocollo ICMP, e in particolare è stata notata una differenza nel campo \textit{code} in caso di risposta a determinati pacchetti inviati utilizzando la libreria di Python scapy.
+Questa differenza è molto importante in quanto è presente in ogni pacchetto inviato in rete e, se non vengono apportate modifiche, non varia tra un pacchetto e l'altro. Solitamente i valori iniziali sono potenze di due (64 o 128); l'eventuale utilizzo di valori parecchio inusuali denota un comportamento molto riconoscibile.
 \\
+\\
+Inoltre, è stata effettuata l'analisi del protocollo ICMP, e in particolare è stata notata una differenza nel campo \textit{code} in caso di risposta a determinati pacchetti inviati utilizzando la libreria di Python scapy.
 
 \begin{lstlisting}[language=Python, caption={Comando Python per l'invio del pacchetto}]
 	from scapy.all import *
@@ -54,6 +64,7 @@ Questo comando invia un pacchetto ICMP con il campo \textit{code} impostato ad u
 	\label{tab:code}
 \end{table}
 
+La differenza è molto peculiare perchè riconoscibile utilizzando solamente il protocollo ICMP (lo stesso del comando \textit{ping}) e non influenza il normale utilizzo di questo protocollo dal momento in cui la differenza si presenta solo inviando determinati pacchetti.
 \section{Livello 4: analisi protocollo TCP}
 Il livello 4 dello stack è formato da due protocolli: User Datagram Protocol (UDP) e Transmission Control Protocol (TCP). Entrambi forniscono informazioni utili per il fingerprinting, ma il TCP possiede un numero maggiore di campi e di opzioni utilizzabili, pertanto è stata data priorità all'analisi di quest'ultimo.
 
@@ -77,6 +88,9 @@ L'utilizzo di questa opzione viene concordato nei segmenti SYN e SYN+ACK dell'ha
 	\label{tab:Window Scale}
 \end{table}
 
+Si tratta di una differenza importante, la quale però per essere rilevata necessita del livello 4 dello stack; inoltre, si può osservare solo se si utilizza il protocollo TCP, essendo UDP privo di handshake.
+\\
+\\
 Proseguendo l'analisi si possono notare ulteriori differenze riguardanti il flag sulla notifica esplicita di congestione (ECN). Si tratta di un flag che consente di comunicare a livello end to end una congestione, evitando però la perdita dei pacchetti. Il mittente, infatti, se riceve un pacchetto contenente quest'informazione diminuisce i pacchetti inviati in quella comunicazione, seguendo specifici algoritmi (ad esempio, Reno). 
 Se si invia un pacchetto simulando l'inizio di un handshake (SYN) con i flag sulla congestione attivi e si osserva la risposta (SYN+ACK), si possono notare risultati differenti tra i pacchetti ricevuti da Windows 11 e Kali:
 \\
@@ -104,12 +118,13 @@ Se si invia un pacchetto simulando l'inizio di un handshake (SYN) con i flag sul
 	\label{tab:ECN}
 \end{table}
 
+Questa diversità è molto peculiare per il fingerprinting di Nmap che, come verrà meglio specificato nella sezione \ref{algoritmi}, assegna una punteggio elevato al risultato di questo test. 
 
 \section{Livello 7: analisi protocollo HTTP}
 Sebbene HTTP sia un protocollo a livello applicativo, esso consente ugualmente di ricavare alcune informazioni utili per l'OS fingerprinting: il campo \textit{User-Agent}, infatti, contiene informazioni esplicite riguardanti il browser che si sta utilizzando e il sistema operativo in utilizzo. Questo tipo di situazione prende il nome di \textit{banner grabbing}.
 
 Inoltre, a questo livello dello stack si può tentare un fingerprinting che vada oltre l'individuazione del sistema operativo, ponendo come obiettivo quello di indovinare il tipo di applicativo in uso.
-Questo è reso possibile dal fatto che HTTP è un protocollo di tipo testuale, pertanto non vi sono campi prefissati ij determinati bit per ogni funzione.
+Questo è reso possibile dal fatto che HTTP è un protocollo di tipo testuale, pertanto non vi sono campi prefissati in determinati bit per ogni funzione.
 L'header, infatti, contiene varie coppie secondo lo schema:\\
 \textbf{chiave:valore} 
 
@@ -153,7 +168,7 @@ L'ordine dei campi nell'header è infatti il seguente:
 \end{table}
 
 Inoltre, analizzando i linguaggi accettati si possono osservare ulteriori disuguaglianze riguardanti il campo \textit{Quality Value}.
-Si tratta di un valore indicato tramite la lettera q (case insensitive)che esprime la preferenza a determinati linguaggi tramite un numero compreso tra 0 e 1, avente massimo tre cifre decimali; il valore di default è 1 ovvero la massima preferenza. \footnote{\url{https://www.rfc-editor.org/rfc/rfc9110.html}}
+Si tratta di un valore indicato tramite la lettera q (case insensitive) che esprime la preferenza a determinati linguaggi tramite un numero compreso tra 0 e 1, avente massimo tre cifre decimali; il valore di default è 1 ovvero la massima preferenza. \cite{qvalue} 
 
 Segue la stringa di quello specifico campo riguardante Chrome e Firefox:
 

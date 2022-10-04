@@ -1,10 +1,17 @@
 \begin{thebibliography}{1}
 
-\bibitem{incapsulamento}
-Infodoc.
-\newblock Sistemi e reti: incapsulamento.
-\newblock http://infodoc.altervista.org/sistemi-e-reti/incapsulamento/,
-  visitato in Settembre 2022.
+\bibitem{GREASE}
+D.~Benjamin.
+\newblock Applying generate random extensions and sustain extensibility
+  (grease) to tls extensibility.
+\newblock https://www.rfc-editor.org/rfc/rfc8701.html, visitato in Settembre
+  2022.
+
+\bibitem{qvalue}
+Ed. Nottingham M.~Ed. Fielding, R. and Ed. J.~Reschke.
+\newblock Http semantics.
+\newblock https://www.rfc-editor.org/rfc/rfc9110.html, visitato in Settembre
+  2022.
 
 \bibitem{headerTCP}
 Ionos.
@@ -12,10 +19,20 @@ Ionos.
 \newblock https://www.ionos.it/digitalguide/server/know-how/presentazione-tcp/,
   visitato in Settembre 2022.
 
-\bibitem{GREASE}
-Ionos.
-\newblock Rfc 8701.
-\newblock https://www.rfc-editor.org/rfc/rfc8701.html, visitato in Settembre
-  2022.
+\bibitem{database_p0f}
+Marek.
+\newblock p0f v3: passive fingerprinter.
+\newblock https://github.com/p0f/p0f/blob/master/docs/README.
+
+\bibitem{punti_nmap}
+Nmap.
+\newblock Nmap os fingerprinting 2nd generation db.
+\newblock https://svn.nmap.org/nmap/nmap-os-db, visitato in Giugno 2022.
+
+\bibitem{ragioni}
+Riaan Stopforth.
+\newblock {\em Techniques and Countermeasures ofTCP/IP OS Fingerprinting on
+  Linux Systems}.
+\newblock visitato in Ottobre 2022.
 
 \end{thebibliography}

@@ -5,44 +5,66 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: sections/references.bib
-You've used 3 entries,
+I was expecting a `,' or a `}'---line 44 of file sections/references.bib
+ :  howpublished = {https://github.com/p0f/p0f/blob/master/docs/README}
+ :                                                                     ",
+I'm skipping whatever remains of this entry
+Name 1 in "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." has a comma at the end for entry qvalue
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
+while executing---line 1049 of file plain.bst
+Name 1 in "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." has a comma at the end for entry qvalue
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
+while executing---line 1090 of file plain.bst
+Warning--empty publisher in ragioni
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            512 strings with 4307 characters,
-and the built_in function-call counts, 650 in all, are:
-= -- 60
-> -- 21
+            527 strings with 4842 characters,
+and the built_in function-call counts, 1318 in all, are:
+= -- 120
+> -- 48
 < -- 0
-+ -- 9
-- -- 6
-* -- 26
-:= -- 114
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 12
++ -- 20
+- -- 14
+* -- 55
+:= -- 226
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 24
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 21
-empty$ -- 67
-format.name$ -- 6
-if$ -- 139
+cite$ -- 7
+duplicate$ -- 47
+empty$ -- 133
+format.name$ -- 14
+if$ -- 282
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 0
-newline$ -- 18
-num.names$ -- 6
-pop$ -- 24
+int.to.str$ -- 6
+missing$ -- 2
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 50
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 19
 quote$ -- 0
-skip$ -- 21
+skip$ -- 43
 stack$ -- 0
-substring$ -- 15
-swap$ -- 3
+substring$ -- 30
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
-warning$ -- 0
-while$ -- 6
-width$ -- 4
-write$ -- 32
+type$ -- 22
+warning$ -- 1
+while$ -- 12
+width$ -- 7
+write$ -- 60
+(There were 9 error messages)

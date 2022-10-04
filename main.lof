@@ -2,12 +2,11 @@
 \babel@toc {italian}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Incapsulamento nel modello ISO/OSI}}{5}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Header TCP}}{6}{figure.2.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Header TCP}}{4}{figure.2.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Risultato di Nmap}}{15}{figure.4.1}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Risultato di Nmap}}{16}{figure.4.1}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Risultato di Nmap dopo il filtraggio dei pacchetti non diretti alla porta 80}}{17}{figure.4.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Pacchetto client hello inviato tramite Microsoft Edge}}{25}{figure.5.1}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Pacchetto client hello inviato tramite Microsoft Edge}}{26}{figure.5.1}%
 \addvspace {10\p@ }

@@ -4,7 +4,7 @@ In questa capitolo si ha l'obiettivo di ingannare i tool di figerprinting, porta
 \\
 Non essendo Windows 11 presente nel database di Nmap e non potendo quindi essere un risultato del fingerprinting, si cercherà di portare i tool all'individuazione della sua versione precedente, ovvero Windows 10.
 
-\section{Algoritmo utilizzato da Nmap}
+\section{Algoritmo utilizzato da Nmap} \label{algoritmi}
 Prima di procedere occorre precisare il funzionamento dell'algoritmo di Nmap per il riconoscimento dei sistemi operativi. Questo avviene secondo un meccanismo di punteggi che viene dato ad ogni test effettuato, specificato nella prima entry del database. I test che non ottengono alcun risultato utile non vengono conteggiati nel totale dei punti.
 A questo punto, vi sono due possibili situazioni:
 \begin{itemize}
@@ -12,7 +12,7 @@ A questo punto, vi sono due possibili situazioni:
 	\item Se i risultati dei test non coincidono con nessun sistema operativo, allora verranno calcolati i punti di ogni test soddisfatti per ogni sistema; quello con cui è stato realizzato un numero maggiore di punti sarà quello mostrato.
 \end{itemize}
 
-Segue l'elenco di test con il relativo punteggio:
+Segue l'elenco di test con il relativo punteggio \cite{punti_nmap}:
 
 \begin{lstlisting}[caption={Punteggi che Nmap attrribuisce ad ogni test}]
 	MatchPoints
@@ -31,6 +31,10 @@ Segue l'elenco di test con il relativo punteggio:
 	RUCK=100%RUD=100)
 	IE(R=50%DFI=40%T=15%TG=15%CD=100)
 \end{lstlisting}
+
+Come si può notare, alcuni test hanno un valore maggiore rispetto ad altri per la frequenza con cui vengono svolti. Ad esempio il test T, che controlla il valore del TTL iniziale, viene effettuato nove volte mentre il test CD che verifica il campo code nel protocollo ICMP viene effettuato una sola volta.
+Questa è una delle ragioni che spiega la discrepanza tra i punteggi attribuiti ai diversi test che vengono svolti.
+Un ulteriore esempio di quanto appena affermato si può trovare tra i test della riga OPS (effettuati sulle opzioni TCP) e i test sulla riga U1, riguardanti il protocollo UDP.
 
 
 \section{Modifiche al file sysctl.conf}
@@ -73,25 +77,26 @@ Il comando per ottenere questo comportamento è contenuto nel file nftables.conf
 Esaminando il database di Nmap, ci si accorge che vi è una differenza nel Window Size tra Kali e Windows 10. Modificare questo campo permette quindi di falsificare un altro test eseguito da Nmap, contribuendo quindi alla realizzazione dell'offuscamento.
 Si procede dunque ad impostare la Window Size come descritta nel database.
 
-\begin{lstlisting}[caption={Modifica della Window Size}, caption=listingsize]
+\begin{lstlisting}[caption={Modifica della Window Size}, label=listingsize]
 	tcp window != 0x2000 tcp window set 0x2000
 \end{lstlisting}
 
 Attuando tutte le modifiche elencate fino a questo punto, l'output di Nmap risulta essere il seguente:
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.85]{figures/primo_nmap.png}
 	\caption{Risultato di Nmap}
 	\label{primo_nmap}
 \end{figure}
 
-Come si può evincere dall'immagine, viene riconosciuta una versione di Linux non corrispondente a quella attualmente in uso.
-Visionando l'elenco completo dei test che vengono effettuati, si può notare che questi vengono preceduti da un port scanning, una procedura che ha l'obiettivo di esaminare l'apertura o meno di determinate porte dell'host.
-Questa è fondamentale ai fini del fingerprinting perché l'individuazione di porte aperte o chiuse permette di effettuare test differenti, in grado di massimizzare il numero di informazioni ricavabili dalle risposte. Di default, Nmap scansiona 1000 porte.
+Come si può evincere dall'immagine, viene riconosciuta una versione di Linux non corrispondente a quella attualmente in uso. Quest'operazione è possibile effettuarla eseguendo il seguente comando sul terminale:
+\begin{lstlisting}[caption={Comando per mostrare la versione attualmente in uso}]
+	hostnamectl
+\end{lstlisting}
+Visionando ulteriormente il risultato, si può notare come siano state rilevate sia porte aperte che porte chiuse. Questo consente una maggiore precisione nel fingerprinting perché i test vengono effettuati su entrambe le condizioni delle porte, individuate precedentemente tramite port scanning; è quindi logico che evitare questa situazione consente di influenzare parecchio il risultato del fingerprinting.
 \\
-Nel risultato appena mostrato si può osservare come il tool abbia rilevato una sola porta aperta (la porta 80, su cui è attivo il server Apache) e 999 porte chiuse. I test eseguiti su quelle porte influenzano il risultato finale del fingerprinting, pertanto la possibilità di poterli escludere renderebbe molto più complessa l'individuazione del sistema operativo.
-Per poter realizzare quanto descritto, occorre che l'host rifiuti tutti i pacchetti ricevuti che non abbiano come porta destinazione 80 (Well-Known port corrispondente ad HTTP).
+Per poter evitare la situazione appena descritta, occorre quindi che l'host rifiuti tutti i pacchetti ricevuti che non abbiano come porta destinazione 80 (Well-Known port corrispondente al protocollo applicativo HTTP).
 \\
 Si procede quindi inserendo una semplice regola nella tabella input delle nftables:
 
@@ -108,13 +113,14 @@ Con l'utilizzo di questa regola, tutte le porte che prima risultavano \textit{ch
 	\label{windows_nmap}
 \end{figure}
 
-Si tratta di un fingerprinting che Nmap definisce "aggressivo", dovuto al fatto che parecchi test non è stato possibile eseguirli; anche per questa ragione la percentuale di sicurezza di Nmap è 89\%, un valore elevato ma che testimonia l'assenza di una certezza assoluta.
+Si tratta di un fingerprinting che Nmap definisce "aggressivo", dovuto al fatto che parecchi test non è stato possibile eseguirli; anche per questa ragione la percentuale di sicurezza di Nmap è 89\%, un valore elevato ma che testimonia l'assenza di una certezza assoluta.\\
+Si può quindi affermare che la mancanza di porte chiuse in favore di quelle filtrate sia una strategia utile a contrastare il fingerprinting attivo, diminuendo di fatto i controlli che possono essere effettuati sui pacchetti.
 
 \section{Offuscamento da fingerprinting passivo}
 Le tecniche seguite per ingannare i tool di fingerprinting passivo non presentano numerose differenze rispetto a quelle della sezione 4.3; vi è però da considerare il fatto che i pacchetti analizzati non sono ricevuti in risposta a determinati probe.
 Questo rende alcune regole impostate precedentemente non più funzionanti, come ad esempio la \ref{codice_icmp}; in questo caso, infatti, l'host non riceve alcun pacchetto echo request con campo code impostato a 9.
 
-Segue l'analisi del database di p0f, presente nel file al percorso /etc/p0f/p0f.fp, con i risultati dei test e le possibilità per un eventuale offuscamento.
+Segue l'analisi del database di p0f, presente nel file al percorso /etc/p0f/p0f.fp, con i risultati dei test e le possibilità per un eventuale offuscamento. L'elenco dei campi è specificato nella documentazione offerta da p0f \cite{database_p0f}.
 \begin{lstlisting}[caption={Fingerptinting TCP con p0f}]
 [tcp:request]
 
@@ -138,7 +144,7 @@ Per quanto riguarda il campo wsize (riferito al Window Size), anche qui vi sono 
 Infine, si può riscontrare una differenza nelle opzioni TCP (campo olayout); queste, infatti, non vengono valutate solamente sul loro utilizzo ma anche nell'ordine in cui queste vengono presentate. È evidente che l'ordinamento utilizzato dai due sistemi operativi sia differente, ma purtroppo non è stato trovato alcun modo per modificare quest'ultime.\\
 Nonostante ciò, p0f non possiede un meccanismo di punteggio come Nmap, e non mostra il sistema operativo più simile a quello effettivamente testato. Questa caratteristica consente quindi di ottenere un offuscamento anche apportando modifiche minime al fine di determinare un nuovo comportamento del sistema operativo che non sia riconducibile a nessuna riga del database.
 
-P0f analizza inoltre anche il fingerprinting del secondo pacchetto di un handshake TCP (SYN+ACK).
+P0f analizza inoltre anche il fingerprinting del secondo pacchetto di un handshake TCP (SYN+ACK) \cite{database_p0f}.
 
 \begin{lstlisting}[caption={Database fingerprinting per pacchetti SYN+ACK dell'handshake TCP}]	
 	sig = ver:ittl:olen:mss:wsize,scale:olayout:quirks:pclass

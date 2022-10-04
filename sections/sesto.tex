@@ -1,12 +1,11 @@
 \chapter{Conclusioni}
-\section{Fingerprinting di sistemi operativi}
 Sintetizzando quanto descritto nei capitoli precedenti, si può affermare che il fingerprinting attivo sia relativamente semplice da offuscare se si conosce il tool in utilizzo; questo perchè si conoscerebbero in anticipo i test e i probe inviati dal tool permettendo quindi una difesa mirata ad ingannare solo aspetti specifici di un protocollo di rete, come avvenuto nel listing \ref{codice_icmp}.
 \\
 È inoltre possibile effettuare un offuscamento modificando parametri che intaccano in misura trascurabile il funzionamento della rete come ad esempio il campo TTL; la modifica di questo valore, se impostato a valori alti (solitamente 64 o 128), permette di raggiungere comunque host che distano parecchi hop.
 \\
 Il fingerprinting passivo richiede invece una modifica del normale comportamento del sistema operativo, non essendoci l'invio di determinati pacchetti da parte del tool, rendendo più complesse le operazioni di offuscamento.
-
-\section{Fingerprinting di browser tramite HTTP e TLS}
+\\
+\\
 L'individuazione del browser in utilizzo è molto peculiare in quanto questa è possibile analizzando un solo pacchetto: la prima richiesta GET se si vuole analizzare il protocollo HTTP o il client hello se si vuole ispezionare il protocollo TLS.
 Nel secondo caso, ottenere l'offuscamento mediante la modifica dei cifrari utilizzati può comportare delle problematiche, ovvero:
 \begin{itemize}
@@ -16,6 +15,6 @@ Nel secondo caso, ottenere l'offuscamento mediante la modifica dei cifrari utili
 
 Al momento l'unica modifica ai cifrari che previene il fingerprinting senza influenzare la sicurezza o la compatibilità consiste nella rimozione del cifrario ripetuto in Edge mostrato nell'immagine \ref{cifrario_ripetuto}.
 
-Il medesimo ragionamento si può applicare agli algoritmi per la firma digitale
+Il medesimo ragionamento si può applicare agli algoritmi per la firma digitale.
 
 
