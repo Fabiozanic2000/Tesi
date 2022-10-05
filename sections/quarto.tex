@@ -12,7 +12,7 @@ A questo punto, vi sono due possibili situazioni:
 	\item Se i risultati dei test non coincidono con nessun sistema operativo, allora verranno calcolati i punti di ogni test soddisfatti per ogni sistema; quello con cui è stato realizzato un numero maggiore di punti sarà quello mostrato.
 \end{itemize}
 
-Segue l'elenco di test con il relativo punteggio \cite{punti_nmap}:
+Segue l'elenco di test con il relativo punteggio \footnote{Nmap OS Fingerprinting 2nd Generation DB, \url{https://svn.nmap.org/nmap/nmap-os-db}}:
 
 \begin{lstlisting}[caption={Punteggi che Nmap attrribuisce ad ogni test}]
 	MatchPoints
@@ -113,17 +113,15 @@ Con l'utilizzo di questa regola, tutte le porte che prima risultavano \textit{ch
 	\label{windows_nmap}
 \end{figure}
 
-Si tratta di un fingerprinting che Nmap definisce "aggressivo", dovuto al fatto che parecchi test non è stato possibile eseguirli; anche per questa ragione la percentuale di sicurezza di Nmap è 89\%, un valore elevato ma che testimonia l'assenza di una certezza assoluta.\\
+Si tratta di un fingerprinting che Nmap definisce "aggressivo", dovuto al fatto che parecchi test non è stato possibile eseguirli; anche per questa ragione la percentuale di sicurezza di Nmap è 89\%, un valore elevato ma che testimonia l'assenza di una certezza assoluta.
 Si può quindi affermare che la mancanza di porte chiuse in favore di quelle filtrate sia una strategia utile a contrastare il fingerprinting attivo, diminuendo di fatto i controlli che possono essere effettuati sui pacchetti.
 
 \section{Offuscamento da fingerprinting passivo}
 Le tecniche seguite per ingannare i tool di fingerprinting passivo non presentano numerose differenze rispetto a quelle della sezione 4.3; vi è però da considerare il fatto che i pacchetti analizzati non sono ricevuti in risposta a determinati probe.
 Questo rende alcune regole impostate precedentemente non più funzionanti, come ad esempio la \ref{codice_icmp}; in questo caso, infatti, l'host non riceve alcun pacchetto echo request con campo code impostato a 9.
-
-Segue l'analisi del database di p0f, presente nel file al percorso /etc/p0f/p0f.fp, con i risultati dei test e le possibilità per un eventuale offuscamento. L'elenco dei campi è specificato nella documentazione offerta da p0f \cite{database_p0f}.
+\\
+Segue l'analisi del database di p0f, presente nel file al percorso /etc/p0f/p0f.fp, con i risultati dei test e le possibilità per un eventuale offuscamento. L'elenco dei campi è specificato nella documentazione offerta da p0f \footnote{Marek, \textit{p0f v3: passive fingerprinter}.}, e si basa sui pacchetti SYN dell'handshake TCP. 
 \begin{lstlisting}[caption={Fingerptinting TCP con p0f}]
-[tcp:request]
-
 sig = ver:ittl:olen:mss:wsize,scale:olayout:quirks:pclass
 
 label = s:unix:Linux:3.11 and newer
@@ -144,7 +142,7 @@ Per quanto riguarda il campo wsize (riferito al Window Size), anche qui vi sono 
 Infine, si può riscontrare una differenza nelle opzioni TCP (campo olayout); queste, infatti, non vengono valutate solamente sul loro utilizzo ma anche nell'ordine in cui queste vengono presentate. È evidente che l'ordinamento utilizzato dai due sistemi operativi sia differente, ma purtroppo non è stato trovato alcun modo per modificare quest'ultime.\\
 Nonostante ciò, p0f non possiede un meccanismo di punteggio come Nmap, e non mostra il sistema operativo più simile a quello effettivamente testato. Questa caratteristica consente quindi di ottenere un offuscamento anche apportando modifiche minime al fine di determinare un nuovo comportamento del sistema operativo che non sia riconducibile a nessuna riga del database.
 
-P0f analizza inoltre anche il fingerprinting del secondo pacchetto di un handshake TCP (SYN+ACK) \cite{database_p0f}.
+P0f analizza inoltre anche il fingerprinting del secondo pacchetto di un handshake TCP (SYN+ACK).
 
 \begin{lstlisting}[caption={Database fingerprinting per pacchetti SYN+ACK dell'handshake TCP}]	
 	sig = ver:ittl:olen:mss:wsize,scale:olayout:quirks:pclass

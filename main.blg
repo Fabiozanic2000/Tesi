@@ -25,46 +25,45 @@ Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Res
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
 while executing---line 1090 of file plain.bst
-Warning--empty publisher in ragioni
-You've used 6 entries,
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            527 strings with 4842 characters,
-and the built_in function-call counts, 1318 in all, are:
-= -- 120
-> -- 48
+            522 strings with 4617 characters,
+and the built_in function-call counts, 1100 in all, are:
+= -- 102
+> -- 41
 < -- 0
-+ -- 20
-- -- 14
-* -- 55
-:= -- 226
-add.period$ -- 18
-call.type$ -- 6
-change.case$ -- 24
++ -- 17
+- -- 12
+* -- 43
+:= -- 189
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 47
-empty$ -- 133
-format.name$ -- 14
-if$ -- 282
+cite$ -- 5
+duplicate$ -- 35
+empty$ -- 111
+format.name$ -- 12
+if$ -- 237
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 2
-newline$ -- 33
-num.names$ -- 12
-pop$ -- 50
+int.to.str$ -- 5
+missing$ -- 0
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 41
 preamble$ -- 1
-purify$ -- 19
+purify$ -- 16
 quote$ -- 0
-skip$ -- 43
+skip$ -- 37
 stack$ -- 0
-substring$ -- 30
-swap$ -- 6
+substring$ -- 25
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
-warning$ -- 1
-while$ -- 12
-width$ -- 7
-write$ -- 60
+type$ -- 20
+warning$ -- 0
+while$ -- 10
+width$ -- 6
+write$ -- 51
 (There were 9 error messages)

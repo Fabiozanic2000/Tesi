@@ -192,7 +192,7 @@ Un'ulteriore informazione importante che si può ricavare dall'analisi degli alg
 
 Si noti come un algoritmo di hashing venga ripetuto due volte all'interno dell'elenco di Safari, delineando di fatto un comportamento peculiare solo di Safari; anche nel caso in cui venisse rimossa questa duplicazione, si otterrebbe comunque una differenza in numero rispetto agli algoritmi elencati da Firefox (10 anziché 11).
 
-Il GREASE,  acroninimo di Generate Random Extensions And Sustain Extensibility, è un valore che corrisponde ad un cifrario inesistente nella realtà e che quindi il ricevente deve ignorare; il protocollo prevede infatti che se il server non supporta un cifrario nella lista questo vada ignorando, valutando quello successivo. Si tratta perciò di un test utile per prevenire bug. \cite{GREASE}
+Il GREASE,  acroninimo di Generate Random Extensions And Sustain Extensibility, è un valore che corrisponde ad un cifrario inesistente nella realtà e che quindi il ricevente deve ignorare; il protocollo prevede infatti che se il server non supporta un cifrario nella lista questo vada ignorando, valutando quello successivo. Si tratta perciò di un test utile per prevenire bug \footnote{D. Benjamin, \textit{Applying Generate Random Extensions And Sustain Extensibility (GREASE) to TLS Extensibility}.}.
 È quindi logico che il GREASE venga posizionato in cima alla lista dei cifrari, in modo che sia sempre valutato dal server.
 \\
 \begin{table}[H]

@@ -29,10 +29,4 @@ Nmap.
 \newblock Nmap os fingerprinting 2nd generation db.
 \newblock https://svn.nmap.org/nmap/nmap-os-db, visitato in Giugno 2022.
 
-\bibitem{ragioni}
-Riaan Stopforth.
-\newblock {\em Techniques and Countermeasures ofTCP/IP OS Fingerprinting on
-  Linux Systems}.
-\newblock visitato in Ottobre 2022.
-
 \end{thebibliography}
