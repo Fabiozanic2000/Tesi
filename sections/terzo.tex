@@ -9,7 +9,7 @@ L'analisi dei pacchetti per l'individuazione delle differenze è stata effettuat
 L'attività si analisi è stata svolta in due differenti modalità:
 \begin{enumerate}
 	\item Nella prima sono state analizzate le risposte ricevute in seguito a richieste GET HTTP inviate tramite browser web; la cattura e l'osservazione di queste è stata effettuata tramite Wireshark.
-	\item Nella seconda si è proceduto con l'ispezione delle risposte a specifici pacchetti inviati utilizzando la funzione sr1 della libreria Python Scapy, che permette la cattura delle risposte ai pacchetti inviati. Le risposte sono state esaminate con la funzione show.
+	\item Nella seconda si è proceduto con l'ispezione delle risposte a specifici pacchetti inviati utilizzando la funzione \textit{sr1} della libreria Python Scapy, che permette la cattura della risposta al pacchetto inviato. Le risposte sono state esaminate con la funzione \textit{show}.
 \end{enumerate}
 Di seguito vengono mostrate le principali differenze notate tra i due sistemi operativi durante l'intera attività di analisi.
 
@@ -64,7 +64,7 @@ Questo comando invia un pacchetto ICMP con il campo \textit{code} impostato ad u
 	\label{tab:code}
 \end{table}
 
-La differenza è molto peculiare perchè riconoscibile utilizzando solamente il protocollo ICMP (lo stesso del comando \textit{ping}) e non influenza il normale utilizzo di questo protocollo dal momento in cui la differenza si presenta solo inviando determinati pacchetti.
+La differenza è molto peculiare perchè riconoscibile utilizzando solamente il protocollo ICMP (lo stesso del comando \textit{ping}) e non ne influenza il normale utilizzo dal momento che la differenza si presenta solo inviando determinati pacchetti \textit{echo request}.
 \section{Livello 4: analisi protocollo TCP}
 Il livello 4 dello stack è formato da due protocolli: User Datagram Protocol (UDP) e Transmission Control Protocol (TCP). Entrambi forniscono informazioni utili per il fingerprinting, ma il TCP possiede un numero maggiore di campi e di opzioni utilizzabili, pertanto è stata data priorità all'analisi di quest'ultimo.
 
@@ -118,7 +118,7 @@ Se si invia un pacchetto simulando l'inizio di un handshake (SYN) con i flag sul
 	\label{tab:ECN}
 \end{table}
 
-Questa diversità è molto peculiare per il fingerprinting di Nmap che, come verrà meglio specificato nella sezione \ref{algoritmi}, assegna una punteggio elevato al risultato di questo test. 
+Questa diversità è molto importante per il fingerprinting di Nmap che, come verrà meglio specificato nella sezione \ref{algoritmi}, assegna una punteggio elevato al risultato di questo test. 
 
 \section{Livello 7: analisi protocollo HTTP}
 Sebbene HTTP sia un protocollo a livello applicativo, esso consente ugualmente di ricavare alcune informazioni utili per l'OS fingerprinting: il campo \textit{User-Agent}, infatti, contiene informazioni esplicite riguardanti il browser che si sta utilizzando e il sistema operativo in utilizzo. Questo tipo di situazione prende il nome di \textit{banner grabbing}.
@@ -168,7 +168,7 @@ L'ordine dei campi nell'header è infatti il seguente:
 \end{table}
 
 Inoltre, analizzando i linguaggi accettati si possono osservare ulteriori disuguaglianze riguardanti il campo \textit{Quality Value}.
-Si tratta di un valore indicato tramite la lettera q (case insensitive) che esprime la preferenza a determinati linguaggi tramite un numero compreso tra 0 e 1, avente massimo tre cifre decimali; il valore di default è 1 ovvero la massima preferenza. \footnote{Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed., \textit{HTTP Semantics}.} 
+Si tratta di un valore indicato tramite la lettera q (case insensitive) che esprime la preferenza a determinati linguaggi tramite un numero compreso tra 0 e 1, avente massimo tre cifre decimali; il valore di default è 1 ovvero la massima preferenza \cite{qvalue}. 
 
 Segue la stringa di quello specifico campo riguardante Chrome e Firefox:
 

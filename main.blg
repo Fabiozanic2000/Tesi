@@ -5,10 +5,6 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: sections/references.bib
-I was expecting a `,' or a `}'---line 44 of file sections/references.bib
- :  howpublished = {https://github.com/p0f/p0f/blob/master/docs/README}
- :                                                                     ",
-I'm skipping whatever remains of this entry
 Name 1 in "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." has a comma at the end for entry qvalue
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
@@ -17,6 +13,7 @@ Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Res
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
 while executing---line 1049 of file plain.bst
+Warning--empty publisher in prof
 Name 1 in "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." has a comma at the end for entry qvalue
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
@@ -25,45 +22,46 @@ Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Res
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
 while executing---line 1090 of file plain.bst
-You've used 5 entries,
+Warning--empty publisher in ragioni
+You've used 7 entries,
             2118 wiz_defined-function locations,
-            522 strings with 4617 characters,
-and the built_in function-call counts, 1100 in all, are:
-= -- 102
-> -- 41
+            530 strings with 4905 characters,
+and the built_in function-call counts, 1542 in all, are:
+= -- 139
+> -- 55
 < -- 0
-+ -- 17
-- -- 12
-* -- 43
-:= -- 189
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 21
++ -- 23
+- -- 16
+* -- 70
+:= -- 264
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 35
-empty$ -- 111
-format.name$ -- 12
-if$ -- 237
+cite$ -- 9
+duplicate$ -- 59
+empty$ -- 155
+format.name$ -- 16
+if$ -- 328
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 0
-newline$ -- 28
-num.names$ -- 10
-pop$ -- 41
+int.to.str$ -- 7
+missing$ -- 4
+newline$ -- 38
+num.names$ -- 14
+pop$ -- 59
 preamble$ -- 1
-purify$ -- 16
+purify$ -- 22
 quote$ -- 0
-skip$ -- 37
+skip$ -- 48
 stack$ -- 0
-substring$ -- 25
-swap$ -- 5
+substring$ -- 35
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
-warning$ -- 0
-while$ -- 10
-width$ -- 6
-write$ -- 51
-(There were 9 error messages)
+type$ -- 24
+warning$ -- 2
+while$ -- 14
+width$ -- 8
+write$ -- 70
+(There were 8 error messages)

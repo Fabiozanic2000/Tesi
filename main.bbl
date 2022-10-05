@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{prof}
+Jon~Mark Allen.
+\newblock {\em OS and Application Fingerprinting Techniques}.
+\newblock visitato in Settembre 2022.
+
 \bibitem{GREASE}
 D.~Benjamin.
 \newblock Applying generate random extensions and sustain extensibility
@@ -22,11 +27,18 @@ Ionos.
 \bibitem{database_p0f}
 Marek.
 \newblock p0f v3: passive fingerprinter.
-\newblock https://github.com/p0f/p0f/blob/master/docs/README.
+\newblock https://github.com/p0f/p0f/blob/master/docs/README, visitato in
+  Settembre 2022.
 
 \bibitem{punti_nmap}
 Nmap.
 \newblock Nmap os fingerprinting 2nd generation db.
 \newblock https://svn.nmap.org/nmap/nmap-os-db, visitato in Giugno 2022.
+
+\bibitem{ragioni}
+Riaan Stopforth.
+\newblock {\em Techniques and Countermeasures of TCP/IP OS Fingerprinting on
+  Linux Systems}.
+\newblock visitato in Ottobre 2022.
 
 \end{thebibliography}

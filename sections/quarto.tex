@@ -12,9 +12,9 @@ A questo punto, vi sono due possibili situazioni:
 	\item Se i risultati dei test non coincidono con nessun sistema operativo, allora verranno calcolati i punti di ogni test soddisfatti per ogni sistema; quello con cui è stato realizzato un numero maggiore di punti sarà quello mostrato.
 \end{itemize}
 
-Segue l'elenco di test con il relativo punteggio \footnote{Nmap OS Fingerprinting 2nd Generation DB, \url{https://svn.nmap.org/nmap/nmap-os-db}}:
+Segue l'elenco di test con il relativo punteggio :
 
-\begin{lstlisting}[caption={Punteggi che Nmap attrribuisce ad ogni test}]
+\begin{lstlisting}[caption={Punteggi che Nmap attrribuisce ad ogni test \cite{punti_nmap}}]
 	MatchPoints
 	SEQ(SP=25%GCD=75%ISR=25%TI=100%CI=50%II=100%SS=80%TS=100)
 	OPS(O1=20%O2=20%O3=20%O4=20%O5=20%O6=20)
@@ -34,7 +34,7 @@ Segue l'elenco di test con il relativo punteggio \footnote{Nmap OS Fingerprintin
 
 Come si può notare, alcuni test hanno un valore maggiore rispetto ad altri per la frequenza con cui vengono svolti. Ad esempio il test T, che controlla il valore del TTL iniziale, viene effettuato nove volte mentre il test CD che verifica il campo code nel protocollo ICMP viene effettuato una sola volta.
 Questa è una delle ragioni che spiega la discrepanza tra i punteggi attribuiti ai diversi test che vengono svolti.
-Un ulteriore esempio di quanto appena affermato si può trovare tra i test della riga OPS (effettuati sulle opzioni TCP) e i test sulla riga U1, riguardanti il protocollo UDP.
+Un ulteriore esempio di quanto appena affermato si può trovare tra i test della riga OPS (effettuati sulle opzioni TCP) e i test sulla riga U1, riguardanti il protocollo UDP. \footnote{\url{https://nmap.org/book/osdetect-methods.html}}
 
 
 \section{Modifiche al file sysctl.conf}
@@ -90,7 +90,7 @@ Attuando tutte le modifiche elencate fino a questo punto, l'output di Nmap risul
 	\label{primo_nmap}
 \end{figure}
 
-Come si può evincere dall'immagine, viene riconosciuta una versione di Linux non corrispondente a quella attualmente in uso. Quest'operazione è possibile effettuarla eseguendo il seguente comando sul terminale:
+Come si può evincere dall'immagine, viene riconosciuta una versione di Linux non corrispondente a quella attualmente in uso. Questo controllo è possibile effettuarlo eseguendo il seguente comando sul terminale:
 \begin{lstlisting}[caption={Comando per mostrare la versione attualmente in uso}]
 	hostnamectl
 \end{lstlisting}
@@ -113,14 +113,14 @@ Con l'utilizzo di questa regola, tutte le porte che prima risultavano \textit{ch
 	\label{windows_nmap}
 \end{figure}
 
-Si tratta di un fingerprinting che Nmap definisce "aggressivo", dovuto al fatto che parecchi test non è stato possibile eseguirli; anche per questa ragione la percentuale di sicurezza di Nmap è 89\%, un valore elevato ma che testimonia l'assenza di una certezza assoluta.
+Si tratta di un fingerprinting che Nmap definisce "aggressivo", dovuto al fatto che parecchi test non è stato possibile eseguirli; anche per questa ragione la percentuale di sicurezza di Nmap è 89\%, un valore elevato ma che testimonia l'assenza di una certezza assoluta.\\
 Si può quindi affermare che la mancanza di porte chiuse in favore di quelle filtrate sia una strategia utile a contrastare il fingerprinting attivo, diminuendo di fatto i controlli che possono essere effettuati sui pacchetti.
 
 \section{Offuscamento da fingerprinting passivo}
 Le tecniche seguite per ingannare i tool di fingerprinting passivo non presentano numerose differenze rispetto a quelle della sezione 4.3; vi è però da considerare il fatto che i pacchetti analizzati non sono ricevuti in risposta a determinati probe.
 Questo rende alcune regole impostate precedentemente non più funzionanti, come ad esempio la \ref{codice_icmp}; in questo caso, infatti, l'host non riceve alcun pacchetto echo request con campo code impostato a 9.
 \\
-Segue l'analisi del database di p0f, presente nel file al percorso /etc/p0f/p0f.fp, con i risultati dei test e le possibilità per un eventuale offuscamento. L'elenco dei campi è specificato nella documentazione offerta da p0f \footnote{Marek, \textit{p0f v3: passive fingerprinter}.}, e si basa sui pacchetti SYN dell'handshake TCP. 
+Segue l'analisi del database di p0f, presente nel file al percorso /etc/p0f/p0f.fp, con i risultati dei test e le possibilità per un eventuale offuscamento. L'elenco dei campi è specificato nella documentazione offerta da p0f \cite{database_p0f}, e si basa sui pacchetti SYN dell'handshake TCP. 
 \begin{lstlisting}[caption={Fingerptinting TCP con p0f}]
 sig = ver:ittl:olen:mss:wsize,scale:olayout:quirks:pclass
 
