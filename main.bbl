@@ -6,16 +6,10 @@ Jon~Mark Allen.
 \newblock visitato in Settembre 2022.
 
 \bibitem{GREASE}
-D.~Benjamin.
+David Benjamin.
 \newblock Applying generate random extensions and sustain extensibility
   (grease) to tls extensibility.
 \newblock https://www.rfc-editor.org/rfc/rfc8701.html, visitato in Settembre
-  2022.
-
-\bibitem{qvalue}
-Ed. Nottingham M.~Ed. Fielding, R. and Ed. J.~Reschke.
-\newblock Http semantics.
-\newblock https://www.rfc-editor.org/rfc/rfc9110.html, visitato in Settembre
   2022.
 
 \bibitem{headerTCP}
@@ -34,6 +28,12 @@ Marek.
 Nmap.
 \newblock Nmap os fingerprinting 2nd generation db.
 \newblock https://svn.nmap.org/nmap/nmap-os-db, visitato in Giugno 2022.
+
+\bibitem{qvalue}
+Julian~Reschke Roy T.~Fielding, Mark~Nottingham.
+\newblock Http semantics.
+\newblock https://www.rfc-editor.org/rfc/rfc9110.html, visitato in Settembre
+  2022.
 
 \bibitem{ragioni}
 Riaan Stopforth.

@@ -5,54 +5,38 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: sections/references.bib
-Name 1 in "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." has a comma at the end for entry qvalue
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
-while executing---line 1049 of file plain.bst
 Warning--empty publisher in prof
-Name 1 in "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." has a comma at the end for entry qvalue
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed." for entry qvalue
-while executing---line 1090 of file plain.bst
 Warning--empty publisher in ragioni
 You've used 7 entries,
             2118 wiz_defined-function locations,
-            530 strings with 4905 characters,
-and the built_in function-call counts, 1542 in all, are:
-= -- 139
-> -- 55
+            530 strings with 4896 characters,
+and the built_in function-call counts, 1506 in all, are:
+= -- 136
+> -- 49
 < -- 0
-+ -- 23
-- -- 16
-* -- 70
-:= -- 264
++ -- 21
+- -- 14
+* -- 66
+:= -- 258
 add.period$ -- 21
 call.type$ -- 7
-change.case$ -- 27
+change.case$ -- 26
 chr.to.int$ -- 0
 cite$ -- 9
 duplicate$ -- 59
 empty$ -- 155
-format.name$ -- 16
-if$ -- 328
+format.name$ -- 14
+if$ -- 321
 int.to.chr$ -- 0
 int.to.str$ -- 7
 missing$ -- 4
 newline$ -- 38
 num.names$ -- 14
-pop$ -- 59
+pop$ -- 58
 preamble$ -- 1
-purify$ -- 22
+purify$ -- 21
 quote$ -- 0
-skip$ -- 48
+skip$ -- 47
 stack$ -- 0
 substring$ -- 35
 swap$ -- 7
@@ -64,4 +48,4 @@ warning$ -- 2
 while$ -- 14
 width$ -- 8
 write$ -- 70
-(There were 8 error messages)
+(There were 2 warnings)
